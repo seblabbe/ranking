@@ -727,7 +727,8 @@ if __name__ == '__main__':
     elif options.stat:
         print c.statistiques_participation()
     else:
-        filename  = u"OUTPUT/classement_{}.csv".format(options.parameters[:-4])
+        filename  = u"OUTPUT/classement_{}_{}.csv".format(options.parameters[:-4],
+                                           options.counting_tournaments)
         #filename  = u"OUTPUT/classement_{}_%Y_%m_%d.csv".format(options.parameters[:-4])
         #filename = today.strftime(filename)
         c.save_csv_summary(filename)

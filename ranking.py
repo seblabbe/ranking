@@ -1,8 +1,16 @@
-#!/opt/local/bin/python2.6
 # coding=utf-8
 r"""
 AUTHOR: Sébastien Labbé, Fall 2011
 """
+#*****************************************************************************
+#       Copyright (C) 2010-2014 Sébastien Labbé <slabqc@gmail.com>
+#
+#  Distributed under the terms of the GNU General Public License version 2 (GPLv2)
+#
+#  The full text of the GPLv2 is available at:
+#
+#                  http://www.gnu.org/licenses/
+#*****************************************************************************
 
 from copy import deepcopy
 from collections import defaultdict
@@ -17,9 +25,16 @@ today = datetime.datetime.today()
 
 from table import table
 
-
-#TOURNOIS = ["Oktober Disk","Movember","Fun-E-Nuf","Bye Bye","Bonne année", "La Flotte","Coup de Foudre","La Virée","Mars Attaque", "Tournoi FUL"]
-TOURNOIS = ["Oktober Disk","Movember","Fun-E-Nuf","Bye Bye","Bonne année", "La Flotte","Coup de Foudre","La Virée","Mars Attaque"]
+######################
+# Should be in Sage
+######################
+def table_to_csv(self, filename, dialect='excel'):
+    r"""
+    """
+    with open(filename, 'w') as f:
+        csv_writer = csv.writer(f, dialect=dialect)
+        csv_writer.writerows(self._rows)
+        print "Creation of file %s" % filename
 
 ######################
 # Systeme
@@ -42,22 +57,9 @@ class Systeme(object):
         self._scale[(0,32)] = [0]*33
 
         #CQU4 2014
-        self._scale[(1000,100)] = [0, 1000, 955, 916, 881, 848, 817, 788,
-                761, 735, 710, 686, 663, 641, 620, 599, 580, 561, 542, 524,
-                507, 490, 474, 458, 443, 428, 413, 399, 386, 372, 360, 347,
-                335, 323, 311, 300, 289, 278, 268, 258, 248, 239, 229, 220,
-                211, 203, 194, 186, 178, 171, 163, 156, 149, 142, 136, 129,
-                123, 117, 111, 105, 100, 95, 89, 85, 80, 75, 71, 66, 62,
-                58, 54, 51, 47, 44, 40, 37, 34, 31, 29, 26, 24, 21, 19, 17,
-                15, 14, 12, 10, 9, 8, 6, 5, 4, 4, 3, 2, 2, 1, 1, 1, 1], 
-        self._scale[(666,50)] = [0, 666, 614, 570, 530, 495, 462, 432, 404,
-                378, 354, 331, 309, 288, 269, 251, 234, 217, 202, 187, 173,
-                160, 148, 136, 125, 114, 104, 95, 86, 78, 70, 63, 56, 49,
-                44, 38, 33, 28, 24, 20, 17, 14, 11, 9, 7, 5, 3, 2, 2, 1,
-                1], 
-        self._scale[(333,24)] = [0, 333, 286, 248, 216, 188, 163, 141, 122,
-                104, 89, 75, 63, 52, 42, 34, 26, 20, 15, 10, 7, 4, 2, 1,
-                1])
+        self._scale[(1000,100)] = [0, 1000, 955, 916, 881, 848, 817, 788, 761, 735, 710, 686, 663, 641, 620, 599, 580, 561, 542, 524, 507, 490, 474, 458, 443, 428, 413, 399, 386, 372, 360, 347, 335, 323, 311, 300, 289, 278, 268, 258, 248, 239, 229, 220, 211, 203, 194, 186, 178, 171, 163, 156, 149, 142, 136, 129, 123, 117, 111, 105, 100, 95, 89, 85, 80, 75, 71, 66, 62, 58, 54, 51, 47, 44, 40, 37, 34, 31, 29, 26, 24, 21, 19, 17, 15, 14, 12, 10, 9, 8, 6, 5, 4, 4, 3, 2, 2, 1, 1, 1, 1]
+        self._scale[(666,50)] = [0, 666, 614, 570, 530, 495, 462, 432, 404, 378, 354, 331, 309, 288, 269, 251, 234, 217, 202, 187, 173, 160, 148, 136, 125, 114, 104, 95, 86, 78, 70, 63, 56, 49, 44, 38, 33, 28, 24, 20, 17, 14, 11, 9, 7, 5, 3, 2, 2, 1, 1]
+        self._scale[(333,24)] = [0, 333, 286, 248, 216, 188, 163, 141, 122, 104, 89, 75, 63, 52, 42, 34, 26, 20, 15, 10, 7, 4, 2, 1, 1]
 
         self._division = ['AAA', 'AA', 'BB', 'CC', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
 
@@ -483,7 +485,7 @@ class Classement(object):
             rows.append( (T.long_name(), T._max_points, T._size, 
                           self.tournament_size(T), 
                           "5/%s and %s/20"%(self.strength5(T), self.strength20(T))))
-        T2 = table(rows=rows,header_row=True)._repr_()
+        T2 = table(rows=rows,header_row=True)
 
         #row_header = ["Pos", "Pts", "#Tourn", "Team name", "Region"]
         #row_header += ['Best', '2nd best', '3rd best', '4th best (does not count)']
@@ -501,8 +503,9 @@ class Classement(object):
                 bests += [""] * (4-len(bests))
             row.extend(bests[:3])
             rows.append(row)
-        T3 = table(rows=rows,header_row=True)._repr_()
-        return "\n\n".join((T1, T2, T3))
+        T3 = table(rows=rows,header_row=True)
+        #return "\n\n".join((T1, T2, T3))
+        return (T1, T2, T3)
 
     def txt_table_provincial(self):
         S = self._systeme
@@ -598,20 +601,22 @@ class Classement(object):
             line += e.pos_pts_es_ordonnes(self._tournois)
             s += line_str(line, col_width, left=range(6))
         return s
-    def save_txt_table_provincial(self):
+    def save_txt_table_provincial(self, filename):
         s = self.txt_table_provincial()
-        filename = 'classement_provincial.txt'
         with open(filename, 'w') as f:
             f.write(s)
         print "Creation de %s " % filename
 
-    def save_txt_table_provincial(self):
-        #s = self.txt_table_provincial()
-        s = self.sage_table()
-        filename = 'classement_provincial.txt'
+    def save_sage_table(self, filename):
+        (T1, T2, T3) = self.sage_table()
+        s = "\n\n".join((T1, T2.__repr__(), T3.__repr__()))
         with open(filename, 'w') as f:
             f.write(s)
         print "Creation de %s " % filename
+
+    def save_csv_summary(self, filename):
+        (T1, T2, T3) = self.sage_table()
+        table_to_csv(T3, filename)
 
     def save_txt_table_partiel(self, L, categorie_name):
         s = self.txt_table_partiel(L, categorie_name)
@@ -714,12 +719,13 @@ if __name__ == '__main__':
     elif options.stat:
         print c.statistiques_participation()
     else:
-        c.save_txt_table_provincial()
-        #c.save_txt_table_partiel(['Bretzels'], 'Junior')
-        #c.save_txt_table_partiel(['Morues'], 'Est')
-        filename = today.strftime(u"classement_%Y_%m_%d.html")
-        if os.system("rst2html.py classement.rst %s" % filename):
-            print "erreur avec la commande rst2html"
-        else:
-            print "Création du fichier %s" % filename
+        filename  = u"OUTPUT/classement_{}.csv".format(options.parameters[:-4])
+        #filename  = u"OUTPUT/classement_{}_%Y_%m_%d.csv".format(options.parameters[:-4])
+        #filename = today.strftime(filename)
+        c.save_csv_summary(filename)
+        #filename = today.strftime(u"OUTPUT/classement_%Y_%m_%d.html")
+        #if os.system("rst2html.py classement.rst %s" % filename):
+        #    print "erreur avec la commande rst2html"
+        #else:
+        #    print "Création du fichier %s" % filename
 

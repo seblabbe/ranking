@@ -1,0 +1,9 @@
+1000,50,2011_bye_bye.csv,"Bye Bye"
+1000,50,2011_movember.csv,"Movember"
+1000,50,2012_coup_de_foudre.csv,"Coup de Foudre"
+1000,105,2012_marsattaque.csv,"Mars Attaque"
+400,24,2011_fun_e_nuf.csv,"Fun E nuF"
+400,24,2011_oktoberdisk.csv,"Oktober Disk"
+400,24,2012_bonne_annee.csv,"Bonne annee"
+800,32,2012_la_flotte.csv,"La Flotte"
+

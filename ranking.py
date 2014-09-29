@@ -40,7 +40,7 @@ def table_to_csv(self, filename, dialect='excel'):
 # Systeme
 ######################
 class Systeme(object):
-    def __init__(self):
+    def __init__(self, counting_tournaments=3):
         self._scale = {}
 
         #CQU4 2011
@@ -63,6 +63,10 @@ class Systeme(object):
 
         self._division = ['AAA', 'AA', 'BB', 'CC', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
 
+        self._counting_tournaments = counting_tournaments
+
+    def counting_tournaments(self):
+        return self._counting_tournaments
     def show(self):
         R = 2
         K = 1
@@ -166,7 +170,7 @@ class Systeme(object):
 # Equipe
 ######################
 class Equipe(object):
-    def __init__(self, nom, provenance):
+    def __init__(self, nom, provenance, systeme):
         r"""
         """
         self._nom = nom
@@ -175,7 +179,7 @@ class Equipe(object):
         self._esprit = defaultdict(str)
         self._points = defaultdict(str)
         self._resultats = defaultdict(int)
-        self._systeme = Systeme()
+        self._systeme = systeme
         self.update_provenance(provenance)
 
     def update_provenance(self, provenance):
@@ -242,8 +246,8 @@ class Equipe(object):
     def total(self):
         L = self._resultats.values()
         L.sort(reverse=True)
-        S = sum(L[:3])
-        # S2 = sum(heapq.nlargest(3, L))
+        S = sum(L[:self._systeme.counting_tournaments()])
+        # S2 = sum(heapq.nlargest(counting_tournaments, L))
         # assert S == S2, "erreur heapq.nlargest"
         return S
 
@@ -291,10 +295,10 @@ class Tournoi(object):
 # Classement
 ######################
 class Classement(object):
-    def __init__(self):
+    def __init__(self, counting_tournaments=3):
         r"""
         """
-        self._systeme = Systeme()
+        self._systeme = Systeme(counting_tournaments)
         self._equipes = {}
         self._tournois = []
 
@@ -312,7 +316,7 @@ class Classement(object):
     def ajout_equipe(self, nom, provenance=''):
         r"""
         """
-        equipe = Equipe(nom, provenance)
+        equipe = Equipe(nom, provenance, self._systeme)
         self._equipes[nom] = equipe
         return equipe
 
@@ -678,6 +682,9 @@ if __name__ == '__main__':
     parser.add_option("-s", "--stat",
                       action="store_true", dest="stat",
                       help=u"Afficher statistiques sur la participation")
+    parser.add_option("-t", "--counting_tournaments", type=int, default=3,
+                      action="store",dest="counting_tournaments",
+                      help=u"Nombre de tournois qui comptent.")
     #parser.add_option("-s", "--size", type="int", dest="size", default=0, help="size")
     #parser.add_option("-c", "--scale", type="float", dest="scale", default=1, help="scale")
     parser.add_option("-p", "--parameters",
@@ -703,7 +710,7 @@ if __name__ == '__main__':
 
     #print parameters
 
-    c = Classement()
+    c = Classement(options.counting_tournaments)
     for filename in args:
         if filename not in parameters:
             raise ValueError("filename (=%s) not set in the parameters"%filename)

@@ -491,10 +491,11 @@ class Classement(object):
                           "5/%s and %s/20"%(self.strength5(T), self.strength20(T))))
         T2 = table(rows=rows,header_row=True)
 
+        counting = self._systeme.counting_tournaments()
         #row_header = ["Pos", "Pts", "#Tourn", "Team name", "Region"]
         #row_header += ['Best', '2nd best', '3rd best', '4th best (does not count)']
         row_header = ["Pos", "Pts", "Team name", "Rg"]
-        row_header += ['Best', '2nd best', '3rd best']
+        row_header += ['Best', '2nd best', '3rd best', '3rd best'][:counting]
         rows = [row_header]
         for i, e in enumerate(L):
             row = [i+1]
@@ -505,7 +506,7 @@ class Classement(object):
             bests = ["%s (%s) %s" % b for b in e.four_best()]
             if len(bests) < 4:
                 bests += [""] * (4-len(bests))
-            row.extend(bests[:3])
+            row.extend(bests[:counting])
             rows.append(row)
         T3 = table(rows=rows,header_row=True)
         #return "\n\n".join((T1, T2, T3))

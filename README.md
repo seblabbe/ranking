@@ -1,4 +1,0 @@
-ranking
-=======
-
-Ultimate team ranking

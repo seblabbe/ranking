@@ -5,7 +5,7 @@ Pos,Pts,Team name,Rg,Best,2nd best,3rd best
 4,2670, PoNY,NE,1 (1000) Club Terminus,3 (835) Colorado Cup,3 (835) Chesapeake Invite
 5,2657, Ironside,NE,2 (911) US Open,2 (911) Chesapeake Invite,3 (835) USA Championship
 6,2603, Machine,GL,1 (1000) Heavyweights,3 (835) Pro Flight Finale,4 (768) Club Terminus
-7,2447, Johnny Bravo,SC,2 (911) Colorado Cup,4 (768) USA Championship,4 (768) West Coast Cup
+7,2447, Johnny Bravo,SC,2 (911) Colorado Cup,4 (768) West Coast Cup,4 (768) USA Championship
 8,2361, GOAT,NE,1 (1000) Pro Flight Finale,5 (708) Chesapeake Invite,6 (653) Club Terminus
 9,2219, Sub Zero,NC,1 (1000) Chesapeake Invite,5 (708) Heavyweights,9 (511) USA Championship
 10,2166, Chain Lightning,SE,2 (911) Club Terminus,6 (653) Chesapeake Invite,7 (602) Pro Flight Finale
@@ -40,8 +40,8 @@ Pos,Pts,Team name,Rg,Best,2nd best,3rd best
 39,594, Beachfront Property,GL,3 (417) Mot. Throwdown,20 (177) Heavyweights,6 (0) GL Reg
 40,575, Space City Ignite,SC,7 (301) San Diego Slammer,16 (274) Heavyweights,4 (0) SC Reg
 41,562, Chico,,6 (326) Cal State,10 (236) San Diego Slammer,
-42,555, Ragnarok,,8 (555) US Open,,
-43,555, Plex,SC,8 (555) Colorado Cup,5 (0) SC Reg,
+42,555, Plex,SC,8 (555) Colorado Cup,5 (0) SC Reg,
+43,555, Ragnarok,,8 (555) US Open,,
 44,534, Gridlock,SW,8 (278) Cal State,9 (256) San Diego Slammer,8 (0) SW Reg
 45,500, Ulysse,,1 (500) Cazenovia,,
 46,471, Brickyard,GL,10 (471) Heavyweights,7 (0) GL Reg,
@@ -121,14 +121,14 @@ Pos,Pts,Team name,Rg,Best,2nd best,3rd best
 120,0, Kentucky Flying Circus,GL,8 (0) GL Reg,,
 121,0, Queen City Thunder,SE,15 (0) SE Reg,,
 122,0, Omen,SE,4 (0) SE Reg,,
-123,0, Red Tide,NE,7 (0) NE Reg,,
-124,0, Nomo Fogoho,SC,12 (0) SC Reg,,
-125,0, Riverside,SC,9 (0) SC Reg,,
-126,0, Shrimp Boat,SE,9 (0) SE Reg,,
-127,0, Genny Tall Boys,NE,14 (0) NE Reg,,
-128,0, Dark or Light,NE,5 (0) NE Reg,,
-129,0, Big Wrench,NE,9 (0) NE Reg,,
-130,0, Hippie Mafia,,35 (0) Heavyweights,,
+123,0, Hippie Mafia,,35 (0) Heavyweights,,
+124,0, Red Tide,NE,7 (0) NE Reg,,
+125,0, Nomo Fogoho,SC,12 (0) SC Reg,,
+126,0, Riverside,SC,9 (0) SC Reg,,
+127,0, Shrimp Boat,SE,9 (0) SE Reg,,
+128,0, Genny Tall Boys,NE,14 (0) NE Reg,,
+129,0, Dark or Light,NE,5 (0) NE Reg,,
+130,0, Big Wrench,NE,9 (0) NE Reg,,
 131,0, Jockamo,SE,13 (0) SE Reg,,
 132,0, Garden State,MA,3 (0) MA Reg,,
 133,0, John Doe,MA,4 (0) MA Reg,,

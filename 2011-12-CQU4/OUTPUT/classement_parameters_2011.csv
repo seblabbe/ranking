@@ -40,7 +40,7 @@ Pos,Pts,Team name,Rg,Best,2nd best,3rd best
 39,591,FantasDisc 4,"Sherbrooke,Québec",6 (230) Oktober Disk,31 (224) Coup de Foudre,34 (137) Movember
 40,533,Connect 4,"Sherbrooke,Montréal",15 (242) La Flotte,28 (217) Coup de Foudre,15 (74) Bonne annee
 41,474,Ta mère,"Drum,Québec,Long,Sherbrooke,Thet,Saguenay",32 (161) Bye Bye,19 (160) La Flotte,37 (153) Movember
-42,466,Squall,"Caplan,Baie des Chaleurs",16 (219) La Flotte,8 (184) Fun E nuF,50 (63) Mars Attaque
+42,466,Squall,"Baie des Chaleurs,Caplan",16 (219) La Flotte,8 (184) Fun E nuF,50 (63) Mars Attaque
 43,462,Oktopus,Sherbrooke,30 (188) Bye Bye,33 (149) Coup de Foudre,35 (125) Mars Attaque
 44,448,Marcel Leboeuf,"Longueuil,Montréal",27 (232) Coup de Foudre,32 (161) Movember,57 (55) Mars Attaque
 45,444,Lemon Drop,Québec,8 (444) La Flotte,,
@@ -98,8 +98,8 @@ Pos,Pts,Team name,Rg,Best,2nd best,3rd best
 97,65,Team You-Hou *,St-Jean-sur-Richelieu,41 (65) Coup de Foudre,,
 98,64,Cobra Kai,Québec,49 (64) Mars Attaque,,
 99,64,Uma Bazooka,Québec,93 (64) Mars Attaque,,
-100,63,Wolfpack,St-John,16 (63) Fun E nuF,,
-101,63,El Toro,Trois-Rivières,16 (63) Bonne annee,,
+100,63,El Toro,Trois-Rivières,16 (63) Bonne annee,,
+101,63,Wolfpack,St-John,16 (63) Fun E nuF,,
 102,60,Va-Comme-J’te-Pousse,Québec,75 (34) Mars Attaque,46 (26) Movember,
 103,58,Rocco,Québec,54 (58) Mars Attaque,,
 104,57,Freez Machines,Québec,55 (57) Mars Attaque,,
@@ -110,9 +110,9 @@ Pos,Pts,Team name,Rg,Best,2nd best,3rd best
 109,44,Myrmidons,"Trois-Rivières,Alma",66 (44) Mars Attaque,,
 110,43,Pas-te Toast,Ottawa,18 (43) Bonne annee,,
 111,42,Light Weight Team,Québec,68 (42) Mars Attaque,,
-112,41,Citrons pressés *,St-Jean-sur-Richelieu,44 (41) Coup de Foudre,,
-113,41,Poilus,Quebec,69 (41) Mars Attaque,,
-114,41,KomeBak,"Sherbrooke,Montréal",44 (41) Coup de Foudre,,
+112,41,Poilus,Quebec,69 (41) Mars Attaque,,
+113,41,KomeBak,"Sherbrooke,Montréal",44 (41) Coup de Foudre,,
+114,41,Citrons pressés *,St-Jean-sur-Richelieu,44 (41) Coup de Foudre,,
 115,41,Pick-ups,Trois-Rivières,44 (41) Bye Bye,,
 116,38,Greengos,Québec,72 (38) Mars Attaque,,
 117,36,Nussan Family,Québec,73 (36) Mars Attaque,,
@@ -128,8 +128,8 @@ Pos,Pts,Team name,Rg,Best,2nd best,3rd best
 127,22,Mean Machine,Québec,86 (22) Mars Attaque,,
 128,20,Machines Gump,Québec,87 (20) Mars Attaque,,
 129,19,Belles gueules,St-Jean-sur-Richelieu,47 (19) Coup de Foudre,,
-130,19,Maritime Mercs,all over,88 (19) Mars Attaque,,
-131,19,MoFOS,Ottawa,21 (19) Bonne annee,,
+130,19,MoFOS,Ottawa,21 (19) Bonne annee,,
+131,19,Maritime Mercs,all over,88 (19) Mars Attaque,,
 132,18,Pick-up AJJUQ,Partout,89 (18) Mars Attaque,,
 133,17,Charettes de plastique,Québec,90 (17) Mars Attaque,,
 134,16,Style libre,Montréal,91 (16) Mars Attaque,,

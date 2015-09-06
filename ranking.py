@@ -37,150 +37,20 @@ def table_to_csv(self, filename, dialect='excel'):
         print "Creation of file %s" % filename
 
 ######################
-# Systeme
-######################
-class Systeme(object):
-    def __init__(self, counting_tournaments=3):
-        self._scale = {}
-
-        #CQU4 2011
-        self._scale[(1000,50)] = [0, 1000, 938, 884, 835, 791, 750, 711, 675, 641, 609, 578, 549, 521, 494, 469, 444, 421, 399, 377, 356, 336, 317, 299, 281, 264, 248, 232, 217, 202, 188, 174, 161, 149, 137, 125, 114, 103, 93, 83, 74, 65, 57, 48, 41, 33, 26, 19, 13, 7, 1]
-        self._scale[(400,24)] = [0, 400, 355, 317, 285, 256, 230, 206, 184, 164, 146, 129, 114, 99, 86, 74, 63, 52, 43, 34, 26, 19, 12, 6, 1]
-        self._scale[(800,32)] = [0, 800, 728, 668, 614, 566, 522, 482, 444, 409, 377, 346, 317, 291, 265, 242, 219, 198, 178, 160, 142, 126, 110, 95, 82, 69, 57, 46, 35, 26, 17, 9, 1]
-        self._scale[(1000,105)] = [0, 1000, 938, 884, 835, 791, 750, 711, 675, 641, 609, 578, 549, 521, 494, 469, 444, 421, 399, 377, 356, 336, 317, 299, 281, 264, 248, 232, 217, 202, 188, 174, 161, 149, 137, 125, 114, 103, 93, 83, 74, 73, 72, 71, 69, 68, 67, 66, 65, 64, 63, 61, 60, 59, 58, 57, 56, 55, 53, 52, 51, 50, 49, 48, 47, 45, 44, 43, 42, 41, 40, 39, 38, 36, 35, 34, 33, 32, 31, 30, 28, 27, 26, 25, 24, 23, 22, 20, 19, 18, 17, 16, 15, 14, 12, 11, 10, 9, 8, 7, 6, 4, 3, 2, 1]
-
-        # USAU 2013
-        self._scale[(1500,32)] = [0, 1500, 1366, 1252, 1152, 1061, 979, 903, 832, 767, 706, 648, 595, 544, 497, 452, 410, 371, 334, 299, 266, 235, 206, 178, 152, 128, 106, 85, 66, 47, 31, 15, 1]
-        self._scale[(1000,32)] = [0, 1000, 911, 835, 768, 708, 653, 602, 555, 511, 471, 432, 397, 363, 332, 302, 274, 248, 223, 199, 177, 157, 137, 119, 102, 86, 71, 57, 44, 32, 21, 10, 1]
-        self._scale[(500,32)] = [0, 500, 455, 417, 384, 354, 326, 301, 278, 256, 236, 217, 199, 182, 166, 151, 137, 124, 112, 100, 89, 79, 69, 60, 51, 43, 36, 29, 22, 16, 11, 6, 1]
-        self._scale[(250,32)] = [0, 250, 228, 209, 192, 177, 163, 151, 139, 128, 118, 109, 100, 91, 83, 76, 69, 62, 56, 50, 45, 40, 35, 30, 26, 22, 18, 15, 12, 9, 6, 3, 1] 
-        self._scale[(0,32)] = [0]*33
-
-        #CQU4 2014
-        self._scale[(1000,100)] = [0, 1000, 955, 916, 881, 848, 817, 788, 761, 735, 710, 686, 663, 641, 620, 599, 580, 561, 542, 524, 507, 490, 474, 458, 443, 428, 413, 399, 386, 372, 360, 347, 335, 323, 311, 300, 289, 278, 268, 258, 248, 239, 229, 220, 211, 203, 194, 186, 178, 171, 163, 156, 149, 142, 136, 129, 123, 117, 111, 105, 100, 95, 89, 85, 80, 75, 71, 66, 62, 58, 54, 51, 47, 44, 40, 37, 34, 31, 29, 26, 24, 21, 19, 17, 15, 14, 12, 10, 9, 8, 6, 5, 4, 4, 3, 2, 2, 1, 1, 1, 1]
-        self._scale[(666,50)] = [0, 666, 614, 570, 530, 495, 462, 432, 404, 378, 354, 331, 309, 288, 269, 251, 234, 217, 202, 187, 173, 160, 148, 136, 125, 114, 104, 95, 86, 78, 70, 63, 56, 49, 44, 38, 33, 28, 24, 20, 17, 14, 11, 9, 7, 5, 3, 2, 2, 1, 1]
-        self._scale[(333,24)] = [0, 333, 286, 248, 216, 188, 163, 141, 122, 104, 89, 75, 63, 52, 42, 34, 26, 20, 15, 10, 7, 4, 2, 1, 1]
-
-        self._division = ['AAA', 'AA', 'BB', 'CC', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
-
-        self._counting_tournaments = counting_tournaments
-
-    def counting_tournaments(self):
-        return self._counting_tournaments
-    def show(self):
-        R = 2
-        K = 1
-        color = 'green'
-        G = Graphics()
-        G += list_plot(self._M1000_N105, color="blue")
-        G += list_plot(self._M1000_N50, color=color)
-        G += list_plot(self._M800_N32, color=color)
-        G += list_plot(self._M400_N24, color=color)
-        #G += plot(curve(50, 100, K=1, R=2, base=e), 1, 50, color=color)
-        G += text("Mars Attaque", (50, 160), fontsize=15, color='blue')
-        G += text("$G_{1000, 50}(p)$ \n Grand Chelem", (10, 800), fontsize=15, color=color)
-        G += text("$G_{800, 32}(p)$ \n La Flotte", (8, 440), fontsize=15, color=color)
-        G += text("$G_{400, 16}(p)$ \n Petit Chelem", (5, 160), fontsize=15, color=color)
-        G += text(u"Systeme 2011-2012", (30, 1000), fontsize=15, color=color)
-        return G
-
-    def create_and_save_image(self):
-        filename = 'systeme_cqu4_2011_2012.png' 
-        G = self.show()
-        G.axes_labels(['Position','Points'])
-        G.xmax(60)
-        G.save(filename,figsize=10)
-        print "Creation de %s " % filename
-
-    def print_table(self):
-        A = self._M1000_N50
-        B = self._M800_N32
-        C = self._M400_N24
-        for i,a,b,c in izip_longest(range(66), A, B, C, fillvalue=0): 
-            print "%3s  %3s %3s %3s" % (i,a,b,c)
-    def latex_table(self):
-        s = ''
-        s += "\\begin{tabular}{c|c|c|c|c}\n" 
-        s += "Position & Série A & Mars Attaque & La Flotte & Série B \\\\ \n"
-        s += " $p$ & $F_{1000,50}(p)$ & & $F_{800,32}(p)$ & $F_{400,16}(p)$ \\\\ \n"
-        s += "\\hline \n"
-        A = self._M1000_N50
-        MA = self._M1000_N105
-        B = self._M800_N32
-        C = self._M400_N24
-        it = izip_longest(range(89), A, MA, B, C, fillvalue=0)
-        it.next() # consume the zero
-        for i,a,ma,b,c in it: 
-            s += "%s & %s & %s & %s & %s \\\\ \n" % (i,a,ma,b,c)
-        s += "\\end{tabular}\n"
-        return s
-
-
-    def rst_table(self):
-        s = ''
-        s += "+----------+---------+--------------+-----------+---------+\n"
-        s += "| Position | Série A | Mars Attaque | La Flotte | Série B |\n"
-        s += "+----------+---------+--------------+-----------+---------+\n"
-
-        A = self._M1000_N50
-        MA = self._M1000_N105
-        B = self._M800_N32
-        C = self._M400_N24
-        nn = max(map(len, (A, MA, B, C)))
-        print nn
-
-        lenghts = [8, 7, 12, 9, 7]
-
-        it = izip_longest(range(nn), A, MA, B, C, fillvalue=0)
-        it.next() # consume the zero
-        for line in it: 
-            t = ' | '.join(str(a).ljust(A) for a,A in zip(line, lenghts))
-            s += "| %s |\n" % t
-            s += "+----------+---------+--------------+-----------+---------+\n"
-        return s
-    def create_and_save_table(self):
-        filename = 'cqu4_table_points.txt'
-        f = open(filename, 'w')
-        f.write(self.rst_table())
-        f.close()
-        print "Creation de %s " % filename
-
-    def __repr__(self):
-        s = "Systeme 2011\n"
-        s += "SerieA: %s\n" % self._M1000_N50
-        s += "Mars Attaque: %s\n" % self._M1000_N105
-        s += "La Flotte: %s\n" % self._M800_N32
-        s += "Serie B: %s\n" % self._M400_N24
-        return s
-
-    def score(self, M, N, position):
-        if (M,N) not in self._scale:
-            raise ValueError, "unknown tournoi parameters (M=%s, N=%s)" % (M, N)
-        scale = self._scale[(M,N)]
-        if position >= len(scale) :
-            return 0
-        else:
-            return scale[position]
-
-    def esprit_point(self):
-        return 50
-    def division(self, i):
-        return self._division[(i-1) // 16]
-######################
 # Equipe
 ######################
 class Equipe(object):
-    def __init__(self, nom, provenance, systeme):
+    def __init__(self, nom, provenance, counting_tournaments):
         r"""
         """
         self._nom = nom
         self._provenance = set()
+        self.update_provenance(provenance)
+        self._counting_tournaments = counting_tournaments
         self._positions = defaultdict(str)
         self._esprit = defaultdict(str)
         self._points = defaultdict(str)
         self._resultats = defaultdict(int)
-        self._systeme = systeme
-        self.update_provenance(provenance)
 
     def update_provenance(self, provenance):
         self._provenance.update(p.strip() for p in provenance.split(','))
@@ -196,25 +66,20 @@ class Equipe(object):
     def __repr__(self):
         return "%22s %30s (%3s)  " % (self._nom, self.points(), self.total())
 
-    def add_resultat(self, tournoi, position, provenance, esprit=False):
+    def add_resultat(self, tournoi, position, points, esprit=0):
         position = int(position)
-        error_msg = "tournoi(=%s) deja present pour l'equipe %s" % (tournoi, self.nom())
+        nom = self.nom().decode('UTF-8')
+        error_msg = u"tournoi(={}) deja present pour l'equipe {}".format(tournoi, nom)
         assert tournoi not in self._positions, error_msg
-        self._positions[tournoi] = position
         assert tournoi not in self._esprit, error_msg
-        if esprit:
-            assert esprit == "esprit sportif", "esprit sportif mal ecrit pour equipe %s" % self.nom()
-            self._esprit[tournoi] = self._systeme.esprit_point()
-        M = tournoi._max_points
-        N = tournoi._size
-        pts = self._systeme.score(M, N, position)
         assert tournoi not in self._points, error_msg
-        self._points[tournoi] = pts
         assert tournoi not in self._resultats, error_msg
-        self._resultats[tournoi] = pts
+        self._positions[tournoi] = position
+        self._points[tournoi] = points
+        self._resultats[tournoi] = points
         if esprit:
-            self._resultats[tournoi] += self._systeme.esprit_point()
-        self.update_provenance(provenance)
+            self._esprit[tournoi] = esprit
+            self._resultats[tournoi] += esprit
 
     def positions(self):
         return self._positions
@@ -246,7 +111,8 @@ class Equipe(object):
     def total(self):
         L = self._resultats.values()
         L.sort(reverse=True)
-        S = sum(L[:self._systeme.counting_tournaments()])
+        counting_tournaments = self._counting_tournaments
+        S = sum(L[:counting_tournaments])
         # S2 = sum(heapq.nlargest(counting_tournaments, L))
         # assert S == S2, "erreur heapq.nlargest"
         return S
@@ -266,16 +132,15 @@ class Equipe(object):
 # Tournoi
 ######################
 class Tournoi(object):
-    def __init__(self, filename, long_name, max_points, size, date=None):
+    def __init__(self, filename, long_name, scale_id, date=None):
         r"""
         """
         self._filename = filename
         self._long_name = long_name
-        self._max_points = int(max_points)
-        self._size = int(size)
+        self._scale_id = scale_id
 
     def __repr__(self):
-        return "Tournoi %s M=%s pts N=%s teams" % (self._long_name, self._max_points, self._size)
+        return "Tournoi %s" % self._long_name
 
     def __hash__(self):
         return hash(self._filename)
@@ -295,16 +160,16 @@ class Tournoi(object):
 # Classement
 ######################
 class Classement(object):
-    def __init__(self, counting_tournaments=3):
+    def __init__(self, scales, counting_tournaments=3):
         r"""
         """
-        self._systeme = Systeme(counting_tournaments)
+        self._counting_tournaments = counting_tournaments
+        self._scales = scales
         self._equipes = {}
         self._tournois = []
 
     def __repr__(self):
         s = "Classement de %s equipes\n" % len(self)
-        s += "Systeme: %s " % self._systeme
         return s
 
     def __len__(self):
@@ -313,16 +178,20 @@ class Classement(object):
     def __getitem__(self, name):
         return self._equipes[name]
 
-    def ajout_equipe(self, nom, provenance=''):
+    def division(self, i):
+        return self._division[(i-1) // 16]
+    def add_equipe(self, nom, provenance=''):
         r"""
         """
-        equipe = Equipe(nom, provenance, self._systeme)
+        equipe = Equipe(nom, provenance, self._counting_tournaments)
         self._equipes[nom] = equipe
         return equipe
 
-    def ajout_tournoi(self, tournoi):
+    def add_tournoi(self, tournoi):
         self._initial = deepcopy(self._equipes.values())
         self._tournois.append(tournoi)
+        scale_id = tournoi._scale_id
+        scale = self._scales[scale_id]
         for row in tournoi:
             if len(row) == 0:
                 continue
@@ -335,13 +204,18 @@ class Classement(object):
                 esprit = False
             elif len(row) == 4:
                 position, nom, provenance, esprit = row
+                assert esprit == "esprit sportif", "esprit sportif mal ecrit pour %s" % tournoi
             else:
                 raise ValueError, "Longueur dune ligne (=%s) doit etre 2 ou 3 ou 4" % row
             if nom in self._equipes:
                 equipe = self._equipes[nom]
+                equipe.update_provenance(provenance)
             else:
-                equipe = self.ajout_equipe(nom, provenance)
-            equipe.add_resultat(tournoi, position, provenance, esprit=esprit)
+                equipe = self.add_equipe(nom, provenance)
+            position = int(position)
+            points = 0 if position >= len(scale) else scale[position]
+            esprit_pts = 50 if esprit else 0
+            equipe.add_resultat(tournoi, position, points, esprit_pts)
 
     def get_position(self, equipe):
         L = sorted(self._equipes.values(), reverse=True)
@@ -443,7 +317,6 @@ class Classement(object):
     def save_csv_table(self):
         L = self._equipes.values()
         L.sort(reverse=True)
-        S = self._systeme
         title = ["Division", "Position", "Équipe", "Provenance"]
         title += ["Pos", "Pts", 'ES'] * len(self._tournois)
         title += ["Total", "Variation"]
@@ -452,7 +325,7 @@ class Classement(object):
             csv_writer = csv.writer(f)
             csv_writer.writerow(title)
             for i, e in enumerate(L):
-                row = [S.division(i+1), i+1, e._nom, e.provenance()]
+                row = [self.division(i+1), i+1, e._nom, e.provenance()]
                 row += e.pos_pts_es_ordonnes(self._tournois)
                 row += [e.total(), self.get_move(e)]
                 csv_writer.writerow(row)
@@ -461,19 +334,17 @@ class Classement(object):
     def save_csv_short_table(self):
         L = self._equipes.values()
         L.sort(reverse=True)
-        S = self._systeme
         title = ["Division", "Position", "Équipe", "Provenance", "Total"]
         filename = today.strftime(u"resume_%Y_%m_%d.csv")
         with open(filename, 'w') as f:
             csv_writer = csv.writer(f)
             csv_writer.writerow(title)
             for i, e in enumerate(L):
-                row = [S.division(i+1), i+1, e._nom, e.provenance(), e.total()]
+                row = [self.division(i+1), i+1, e._nom, e.provenance(), e.total()]
                 csv_writer.writerow(row)
             print "Creation de %s " % filename
 
     def sage_table(self):
-        S = self._systeme
         L = self._equipes.values()
         L.sort(reverse=True)
         nb_tournois = len(self._tournois)
@@ -486,12 +357,13 @@ class Classement(object):
         rows = [("Tournaments considered", "Points for champion", "#teams getting points", 
                  "#teams", "Strength")]
         for T in self._tournois:
-            rows.append( (T.long_name(), T._max_points, T._size, 
+            scale = self._scales[T._scale_id]
+            rows.append( (T.long_name(), scale[1], len(scale)-1, 
                           self.tournament_size(T), 
                           "5/%s and %s/20"%(self.strength5(T), self.strength20(T))))
         T2 = table(rows=rows,header_row=True)
 
-        counting = self._systeme.counting_tournaments()
+        counting = self._counting_tournaments
         #row_header = ["Pos", "Pts", "#Tourn", "Team name", "Region"]
         #row_header += ['Best', '2nd best', '3rd best', '4th best (does not count)']
         row_header = ["Pos", "Pts", "Team name", "Rg"]
@@ -513,7 +385,6 @@ class Classement(object):
         return (T1, T2, T3)
 
     def txt_table_provincial(self):
-        S = self._systeme
         L = self._equipes.values()
         L.sort(reverse=True)
         nb_tournois = len(self._tournois)
@@ -554,7 +425,7 @@ class Classement(object):
         titre_str += line_str(souligne, col_width_title, left=range(16))
         s += titre_str
         for i, e in enumerate(L):
-            line = [S.division(i+1), i%16 +1]
+            line = [self.division(i+1), i%16 +1]
             line += [e.total(), self.get_move(e)]
             line += [e.nb_tournois_participes()]
             line += [e._nom]
@@ -697,26 +568,20 @@ if __name__ == '__main__':
     #print options
     #print args
 
-    parameters = {}
+    all_tournaments = {}
     with open(options.parameters, 'r') as f:
-        for row in csv.reader(f):
-            if len(row) == 0:
-                continue
-            elif len(row) == 4:
-                M, N, filename, long_name = row
-            else:
-                raise ValueError, "Longueur dune ligne (=%s) doit etre 4 (fichier parameters)" % row
-            T = Tournoi(filename, long_name, M, N)
-            parameters[filename] = T
+        import json
+        D = json.load(f)
 
-    #print parameters
-
-    c = Classement(options.counting_tournaments)
-    for filename in args:
-        if filename not in parameters:
-            raise ValueError("filename (=%s) not set in the parameters"%filename)
-        T = parameters[filename]
-        c.ajout_tournoi(T)
+    scales = D['scales']
+    counting_tournaments = D['counting_tournaments']
+    c = Classement(scales, counting_tournaments)
+    for T in D['tournaments']:
+        filename = T['file']
+        name = T['name']
+        scale_id = T['scale_id']
+        T = Tournoi(filename, name, scale_id)
+        c.add_tournoi(T)
 
     if options.alphabetique:
         c.print_equipe_alphabetiquement()
@@ -727,8 +592,7 @@ if __name__ == '__main__':
     elif options.stat:
         print c.statistiques_participation()
     else:
-        filename  = u"OUTPUT/classement_{}_{}.csv".format(options.parameters[:-4],
-                                           options.counting_tournaments)
+        filename  = u"OUTPUT/classement_{}.csv".format(options.parameters[:-5])
         #filename  = u"OUTPUT/classement_{}_%Y_%m_%d.csv".format(options.parameters[:-4])
         #filename = today.strftime(filename)
         c.save_csv_summary(filename)

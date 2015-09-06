@@ -366,19 +366,20 @@ class Classement(object):
         counting = self._counting_tournaments
         #row_header = ["Pos", "Pts", "#Tourn", "Team name", "Region"]
         #row_header += ['Best', '2nd best', '3rd best', '4th best (does not count)']
-        row_header = ["Pos", "Pts", "Team name", "Rg"]
-        row_header += ['Best', '2nd best', '3rd best', '3rd best'][:counting]
+        row_header = ["Pos", "Pts", "Team name"]
+        row_header += ['Best', '2nd best', '3rd best', '4th best'][:counting]
+        row_header += ['Provenance']
         rows = [row_header]
         for i, e in enumerate(L):
             row = [i+1]
             row.append(e.total())
             #row.append(e.nb_tournois_participes())
             row.append(e._nom)
-            row.append(e.provenance())
             bests = ["%s (%s) %s" % b for b in e.four_best()]
             if len(bests) < 4:
                 bests += [""] * (4-len(bests))
             row.extend(bests[:counting])
+            row.append(e.provenance())
             rows.append(row)
         T3 = table(rows=rows,header_row=True)
         #return "\n\n".join((T1, T2, T3))

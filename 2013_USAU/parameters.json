@@ -1,0 +1,297 @@
+{
+    "counting_tournaments": 3,
+    "tournaments": [
+        {
+            "scale_id": "B", 
+            "name": "Chesapeake Invite", 
+            "file": "chesapeake_invite.csv"
+        }, 
+        {
+            "scale_id": "B", 
+            "name": "Colorado Cup", 
+            "file": "colorado_cup.csv"
+        }, 
+        {
+            "scale_id": "B", 
+            "name": "Pro Flight Finale", 
+            "file": "pro_flight_finale.csv"
+        }, 
+        {
+            "scale_id": "B", 
+            "name": "West Coast Cup", 
+            "file": "west_coast_cup.csv"
+        }, 
+        {
+            "scale_id": "B", 
+            "name": "Club Terminus", 
+            "file": "club_terminus.csv"
+        }, 
+        {
+            "scale_id": "B", 
+            "name": "Heavyweights", 
+            "file": "heavyweights.csv"
+        }, 
+        {
+            "scale_id": "B", 
+            "name": "US Open", 
+            "file": "us_open.csv"
+        }, 
+        {
+            "scale_id": "C", 
+            "name": "Cal State", 
+            "file": "2013_06_cal_state.csv"
+        }, 
+        {
+            "scale_id": "C", 
+            "name": "Cazenovia", 
+            "file": "2013_06_cut.csv"
+        }, 
+        {
+            "scale_id": "C", 
+            "name": "No Surf", 
+            "file": "2013_06_no_surf.csv"
+        }, 
+        {
+            "scale_id": "C", 
+            "name": "Old Dominion Q.", 
+            "file": "2013_06_old_dominion_qualif.csv"
+        }, 
+        {
+            "scale_id": "C", 
+            "name": "Mot. Throwdown", 
+            "file": "2013_07_motown_throwdown.csv"
+        }, 
+        {
+            "scale_id": "C", 
+            "name": "San Diego Slammer", 
+            "file": "2013_07_sandiego_slammer.csv"
+        }, 
+        {
+            "scale_id": "C", 
+            "name": "Col. Cup noTCT", 
+            "file": "2013_08_colorado_cup_noTCT.csv"
+        }, 
+        {
+            "scale_id": "Z", 
+            "name": "GL Reg", 
+            "file": "2013_09_gl_reg.csv"
+        }, 
+        {
+            "scale_id": "Z", 
+            "name": "MA Reg", 
+            "file": "2013_09_ma_reg.csv"
+        }, 
+        {
+            "scale_id": "Z", 
+            "name": "NC Reg", 
+            "file": "2013_09_nc_reg.csv"
+        }, 
+        {
+            "scale_id": "Z", 
+            "name": "NE Reg", 
+            "file": "2013_09_ne_reg.csv"
+        }, 
+        {
+            "scale_id": "Z", 
+            "name": "NW Reg", 
+            "file": "2013_09_nw_reg.csv"
+        }, 
+        {
+            "scale_id": "Z", 
+            "name": "SC Reg", 
+            "file": "2013_09_sc_reg.csv"
+        }, 
+        {
+            "scale_id": "Z", 
+            "name": "SE Reg", 
+            "file": "2013_09_se_reg.csv"
+        }, 
+        {
+            "scale_id": "Z", 
+            "name": "SW Reg", 
+            "file": "2013_09_sw_reg.csv"
+        }, 
+        {
+            "scale_id": "B", 
+            "name": "USA Championship", 
+            "file": "2013_10_usau_championship.csv"
+        }
+    ], 
+    "scales": {
+        "A": [
+            0, 
+            1500, 
+            1366, 
+            1252, 
+            1152, 
+            1061, 
+            979, 
+            903, 
+            832, 
+            767, 
+            706, 
+            648, 
+            595, 
+            544, 
+            497, 
+            452, 
+            410, 
+            371, 
+            334, 
+            299, 
+            266, 
+            235, 
+            206, 
+            178, 
+            152, 
+            128, 
+            106, 
+            85, 
+            66, 
+            47, 
+            31, 
+            15, 
+            1
+        ], 
+        "C": [
+            0, 
+            500, 
+            455, 
+            417, 
+            384, 
+            354, 
+            326, 
+            301, 
+            278, 
+            256, 
+            236, 
+            217, 
+            199, 
+            182, 
+            166, 
+            151, 
+            137, 
+            124, 
+            112, 
+            100, 
+            89, 
+            79, 
+            69, 
+            60, 
+            51, 
+            43, 
+            36, 
+            29, 
+            22, 
+            16, 
+            11, 
+            6, 
+            1
+        ], 
+        "Z": [
+            0, 
+            0, 
+            0, 
+            0, 
+            0, 
+            0, 
+            0, 
+            0, 
+            0, 
+            0, 
+            0, 
+            0, 
+            0, 
+            0, 
+            0, 
+            0, 
+            0, 
+            0, 
+            0, 
+            0, 
+            0, 
+            0, 
+            0, 
+            0, 
+            0, 
+            0, 
+            0, 
+            0, 
+            0, 
+            0, 
+            0, 
+            0, 
+            0
+        ], 
+        "D": [
+            0, 
+            250, 
+            228, 
+            209, 
+            192, 
+            177, 
+            163, 
+            151, 
+            139, 
+            128, 
+            118, 
+            109, 
+            100, 
+            91, 
+            83, 
+            76, 
+            69, 
+            62, 
+            56, 
+            50, 
+            45, 
+            40, 
+            35, 
+            30, 
+            26, 
+            22, 
+            18, 
+            15, 
+            12, 
+            9, 
+            6, 
+            3, 
+            1
+        ], 
+        "B": [
+            0, 
+            1000, 
+            911, 
+            835, 
+            768, 
+            708, 
+            653, 
+            602, 
+            555, 
+            511, 
+            471, 
+            432, 
+            397, 
+            363, 
+            332, 
+            302, 
+            274, 
+            248, 
+            223, 
+            199, 
+            177, 
+            157, 
+            137, 
+            119, 
+            102, 
+            86, 
+            71, 
+            57, 
+            44, 
+            32, 
+            21, 
+            10, 
+            1
+        ]
+    }
+}

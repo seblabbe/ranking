@@ -215,9 +215,10 @@ class Tournoi(object):
                     esprit = False
                 elif len(row) == 4:
                     position, nom, provenance, esprit = row
-                    assert esprit == "esprit sportif", "esprit sportif mal ecrit pour %s" % tournoi
+                    error_msg = "esprit sportif mal ecrit pour %s" % self
+                    assert esprit in ["", "esprit sportif"], error_msg
                 else:
-                    raise ValueError, "Longueur dune ligne (=%s) doit etre 2 ou 3 ou 4" % row
+                    raise ValueError, "In file {}: Longueur dune ligne (={}) doit etre 2 ou 3 ou 4.".format(filename, row)
                 yield int(position), nom, provenance, esprit
 
     def short_name(self):

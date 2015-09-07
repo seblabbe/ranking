@@ -19,11 +19,18 @@ from itertools import izip, izip_longest, count
 import heapq
 
 import locale
-locale.setlocale(locale.LC_ALL, 'fr_FR')
+try:
+    locale.setlocale(locale.LC_ALL, 'fr_CA.utf8')
+except locale.Error:
+    locale.setlocale(locale.LC_ALL, 'fr_CA')
+
 import datetime
 today = datetime.datetime.today()
 
-from table import table
+try:
+    from sage.misc.table import table
+except ImportError:
+    from table import table
 
 ######################
 # Should be in Sage
@@ -53,21 +60,60 @@ class Equipe(object):
         self._resultats = defaultdict(int)
 
     def update_provenance(self, provenance):
+        r"""
+        EXEMPLES::
+
+            sage: e = Equipe("Berger", "Mtl", 2)
+            sage: e.provenance()
+            'Mtl'
+            sage: e.update_provenance('Sherb,TR,Mtl')
+            sage: e.provenance()
+            'TR,Mtl,Sherb'
+            sage: e.update_provenance('galaxie')
+            sage: e.provenance()
+            'galaxie,TR,Mtl,Sherb'
+        """
         self._provenance.update(p.strip() for p in provenance.split(','))
         if '' in self._provenance: self._provenance.remove('')
 
     def nom(self):
         return self._nom
     def provenance(self):
+        r"""
+        EXEMPLES::
+
+            sage: e = Equipe("Berger", "Mtl", 2)
+            sage: e.provenance()
+            'Mtl'
+        """
         s = ",".join(self._provenance)
         #s = s.replace('è','e')
         #s = s.replace('é','e')
         return s
     def __repr__(self):
-        return "%22s %30s (%3s)  " % (self._nom, self.points(), self.total())
+        r"""
+        EXEMPLES::
+
+            sage: e = Equipe("Berger", "Mtl", 2)
+            sage: e
+            Berger Pts:[] Tot:0
+        """
+        nom = self.nom()
+        pts = sorted(self.points().values(), reverse=True)
+        tot = self.total()
+        return "{} Pts:{} Tot:{}".format(nom, pts, tot)
 
     def add_resultat(self, tournoi, position, points, esprit=0):
-        position = int(position)
+        r"""
+        EXEMPLES::
+
+            sage: e = Equipe("Berger", "Mtl", 2)
+            sage: e.add_resultat('t1', 3, 35)
+            sage: e.add_resultat('t2', 2, 20)
+            sage: e.add_resultat('t3', 1, 100)
+            sage: e
+            Berger Pts:[100, 35, 20] Tot:135
+        """
         nom = self.nom().decode('UTF-8')
         error_msg = u"tournoi(={}) deja present pour l'equipe {}".format(tournoi, nom)
         assert tournoi not in self._positions, error_msg
@@ -82,6 +128,16 @@ class Equipe(object):
             self._resultats[tournoi] += esprit
 
     def positions(self):
+        r"""
+        EXEMPLES::
+
+            sage: e = Equipe("Berger", "Mtl", 2)
+            sage: e.add_resultat('t1', 3, 35)
+            sage: e.add_resultat('t2', 2, 20)
+            sage: e.add_resultat('t3', 1, 100)
+            sage: e.positions()
+            defaultdict(<type 'str'>, {'t2': 2, 't3': 1, 't1': 3})
+        """
         return self._positions
 
     def points(self):
@@ -148,7 +204,21 @@ class Tournoi(object):
         filename = self._filename
         with open(filename, 'r') as f:
             for row in csv.reader(f):
-                yield row
+                if len(row) == 0:
+                    continue
+                elif len(row) == 2:
+                    position, nom = row
+                    provenance = ""
+                    esprit = False
+                elif len(row) == 3:
+                    position, nom, provenance = row
+                    esprit = False
+                elif len(row) == 4:
+                    position, nom, provenance, esprit = row
+                    assert esprit == "esprit sportif", "esprit sportif mal ecrit pour %s" % tournoi
+                else:
+                    raise ValueError, "Longueur dune ligne (=%s) doit etre 2 ou 3 ou 4" % row
+                yield int(position), nom, provenance, esprit
 
     def short_name(self):
         assert self._filename.endswith('.csv')
@@ -167,6 +237,9 @@ class Classement(object):
         self._scales = scales
         self._equipes = {}
         self._tournois = []
+        self._sorted_previous = []
+        self._sorted_teams = []
+        self._moves = {}
 
     def __repr__(self):
         s = "Classement de %s equipes\n" % len(self)
@@ -180,58 +253,64 @@ class Classement(object):
 
     def division(self, i):
         return self._division[(i-1) // 16]
-    def add_equipe(self, nom, provenance=''):
-        r"""
-        """
-        equipe = Equipe(nom, provenance, self._counting_tournaments)
-        self._equipes[nom] = equipe
-        return equipe
 
     def add_tournoi(self, tournoi):
-        self._initial = deepcopy(self._equipes.values())
+        self._sorted_previous = self._sorted_teams
         self._tournois.append(tournoi)
         scale_id = tournoi._scale_id
         scale = self._scales[scale_id]
-        for row in tournoi:
-            if len(row) == 0:
-                continue
-            elif len(row) == 2:
-                position, nom = row
-                provenance = ""
-                esprit = False
-            elif len(row) == 3:
-                position, nom, provenance = row
-                esprit = False
-            elif len(row) == 4:
-                position, nom, provenance, esprit = row
-                assert esprit == "esprit sportif", "esprit sportif mal ecrit pour %s" % tournoi
-            else:
-                raise ValueError, "Longueur dune ligne (=%s) doit etre 2 ou 3 ou 4" % row
+        for position, nom, provenance, esprit in tournoi:
             if nom in self._equipes:
                 equipe = self._equipes[nom]
                 equipe.update_provenance(provenance)
             else:
-                equipe = self.add_equipe(nom, provenance)
-            position = int(position)
+                equipe = Equipe(nom, provenance, self._counting_tournaments)
+                self._equipes[nom] = equipe
             points = 0 if position >= len(scale) else scale[position]
             esprit_pts = 50 if esprit else 0
             equipe.add_resultat(tournoi, position, points, esprit_pts)
+        self._sorted_teams = sorted(self._equipes.values(), reverse=True)
+        self._moves[tournoi] = c.get_move_list()
+
+    def get_previous_position(self, equipe):
+        if equipe in self._sorted_previous:
+            return self._sorted_previous.index(equipe)
+        else:
+            return None
 
     def get_position(self, equipe):
-        L = sorted(self._equipes.values(), reverse=True)
-        return L.index(equipe)
+        return self._sorted_teams.index(equipe)
+
     def get_move(self, equipe):
-        if equipe in self._initial:
-            L = sorted(self._initial, reverse=True)
-            diff = L.index(equipe) - self.get_position(equipe) 
-            if diff > 0:
-                return '+%s' % diff
-            elif diff == 0:
-                return ''
-            else:
-                return diff
-        else:
+        previous = self.get_previous_position(equipe)
+        if previous is None:
+            return None
+        return previous - self.get_position(equipe) 
+
+    def get_move_str(self, equipe):
+        diff = self.get_move(equipe)
+        if diff is None or diff == 0:
             return ''
+        elif diff > 0:
+            return '+{}'.format(diff)
+        else:
+            return '{}'.format(diff)
+
+    def get_move_list(self):
+        L = []
+        for eq in c._sorted_teams:
+            diff = c.get_move(eq)
+            L.append(0 if diff is None else diff)
+        return L
+
+    def number_of_inversions(self, top=32):
+        L = []
+        for tournoi in self._tournois:
+            move_list = self._moves[tournoi]
+            #print tournoi, move_list[:top]
+            moves = sum(abs(a) for a in move_list[:top])
+            L.append(moves)
+        return L, sum(L)
 
     def strength5(self, tournoi, best=5):
         r"""
@@ -259,7 +338,7 @@ class Classement(object):
         L = self._equipes.values()
         L.sort(reverse=True)
         for e in L:
-            print e, self.get_move(e)
+            print e, self.get_move_str(e)
     def print_equipe_alphabetiquement(self):
         L = self._equipes.keys()
         for nom in sorted(L):
@@ -279,7 +358,7 @@ class Classement(object):
         s += "Position & Équipe & Points & Variation \\\\ \n"
         s += "\\hline \n"
         for i, e in enumerate(L):
-            s += "%s & %s & %s & %s \\\\ \n" % (i+1, e._nom, e.total(), self.get_move(e))
+            s += "%s & %s & %s & %s \\\\ \n" % (i+1, e._nom, e.total(), self.get_move_str(e))
         s += '\\end{tabular}\n'
         return s
 
@@ -291,7 +370,7 @@ class Classement(object):
         s += "| Position | Équipe                           | Resultats                      | Points | Variation |\n"
         s += "+----------+----------------------------------+--------------------------------+--------+-----------+\n"
         for i, e in enumerate(L):
-            s += "| %8s | %32s | %30s | %6s | %9s |\n" % (i+1, e._nom, e._positions, e.total(), self.get_move(e))
+            s += "| %8s | %32s | %30s | %6s | %9s |\n" % (i+1, e._nom, e._positions, e.total(), self.get_move_str(e))
             s += "+----------+----------------------------------+--------------------------------+--------+-----------+\n"
         return s
 
@@ -303,7 +382,7 @@ class Classement(object):
         s += "| Position | Équipe                           | Points | Variation |\n"
         s += "+----------+----------------------------------+--------+-----------+\n"
         for i, e in enumerate(L):
-            s += "| %8s | %32s | %6s | %9s |\n" % (i+1, e._nom, e.total(), self.get_move(e))
+            s += "| %8s | %32s | %6s | %9s |\n" % (i+1, e._nom, e.total(), self.get_move_str(e))
             s += "+----------+----------------------------------+--------+-----------+\n"
         return s
 
@@ -327,7 +406,7 @@ class Classement(object):
             for i, e in enumerate(L):
                 row = [self.division(i+1), i+1, e._nom, e.provenance()]
                 row += e.pos_pts_es_ordonnes(self._tournois)
-                row += [e.total(), self.get_move(e)]
+                row += [e.total(), self.get_move_str(e)]
                 csv_writer.writerow(row)
             print "Creation de %s " % filename
 
@@ -427,7 +506,7 @@ class Classement(object):
         s += titre_str
         for i, e in enumerate(L):
             line = [self.division(i+1), i%16 +1]
-            line += [e.total(), self.get_move(e)]
+            line += [e.total(), self.get_move_str(e)]
             line += [e.nb_tournois_participes()]
             line += [e._nom]
             line += e.pos_pts_es_ordonnes(self._tournois)
@@ -473,7 +552,7 @@ class Classement(object):
         s += titre_str
         for i, e in enumerate(L):
             line = [categorie_name, i+1] 
-            line += [e.total(), self.get_move(e)]
+            line += [e.total(), self.get_move_str(e)]
             line += [e._nom, e.provenance()]
             line += e.pos_pts_es_ordonnes(self._tournois)
             s += line_str(line, col_width, left=range(6))
@@ -583,6 +662,8 @@ if __name__ == '__main__':
         scale_id = T['scale_id']
         T = Tournoi(filename, name, scale_id)
         c.add_tournoi(T)
+
+    print "Inversions:", c.number_of_inversions(top=12)
 
     if options.alphabetique:
         c.print_equipe_alphabetiquement()

@@ -2,9 +2,9 @@
     "counting_tournaments": 3,
     "tournaments": [
         {
-            "scale_id": "B", 
-            "name": "Bye Bye", 
-            "file": "2011_bye_bye.csv"
+            "scale_id": "D", 
+            "name": "Oktober Disk", 
+            "file": "2011_oktoberdisk.csv"
         }, 
         {
             "scale_id": "B", 
@@ -12,24 +12,14 @@
             "file": "2011_movember.csv"
         }, 
         {
-            "scale_id": "B", 
-            "name": "Coup de Foudre", 
-            "file": "2012_coup_de_foudre.csv"
-        }, 
-        {
-            "scale_id": "A", 
-            "name": "Mars Attaque", 
-            "file": "2012_marsattaque.csv"
-        }, 
-        {
             "scale_id": "D", 
             "name": "Fun E nuF", 
             "file": "2011_fun_e_nuf.csv"
         }, 
         {
-            "scale_id": "D", 
-            "name": "Oktober Disk", 
-            "file": "2011_oktoberdisk.csv"
+            "scale_id": "B", 
+            "name": "Bye Bye", 
+            "file": "2011_bye_bye.csv"
         }, 
         {
             "scale_id": "D", 
@@ -40,7 +30,17 @@
             "scale_id": "C", 
             "name": "La Flotte", 
             "file": "2012_la_flotte.csv"
-        }
+        },
+        {
+            "scale_id": "B", 
+            "name": "Coup de Foudre", 
+            "file": "2012_coup_de_foudre.csv"
+        }, 
+        {
+            "scale_id": "A", 
+            "name": "Mars Attaque", 
+            "file": "2012_marsattaque.csv"
+        } 
     ], 
     "scales": {
         "A": [

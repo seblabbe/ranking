@@ -10,7 +10,8 @@ cqu42014:
 	cd 2011-12-CQU4 && sage -python ../ranking.py -p parameters_2014.json
 
 cqu42015:
-	cd 2011-12-CQU4 && sage -python ../ranking.py -p parameters_2015.json
+	cd 2011-12-CQU4 && sage -python ../ranking.py -p parameters_2014.json
+	cd 2011-12-CQU4 && sage -python ../ranking.py -p parameters_2015_v1.json
 	cd 2011-12-CQU4 && sage -python ../ranking.py -p parameters_2015_v2.json
 
 csv:

@@ -1,0 +1,55 @@
+{
+    "counting_tournaments": 2,
+    "tournaments": [
+        {
+            "scale_id": "B", 
+            "name": "Oktober Disk", 
+            "file": "2011_oktoberdisk.csv"
+        }, 
+        {
+            "scale_id": "A", 
+            "name": "Movember", 
+            "file": "2011_movember.csv"
+        }, 
+        {
+            "scale_id": "Z", 
+            "name": "Fun E nuF", 
+            "file": "2011_fun_e_nuf.csv"
+        }, 
+        {
+            "scale_id": "A", 
+            "name": "Bye Bye", 
+            "file": "2011_bye_bye.csv"
+        }, 
+        {
+            "scale_id": "B", 
+            "name": "Bonne annee", 
+            "file": "2012_bonne_annee.csv"
+        }, 
+        {
+            "scale_id": "B", 
+            "name": "La Flotte", 
+            "file": "2012_la_flotte.csv"
+        },
+        {
+            "scale_id": "A", 
+            "name": "Coup de Foudre", 
+            "file": "2012_coup_de_foudre.csv"
+        }, 
+        {
+            "scale_id": "Z", 
+            "name": "Mars Attaque", 
+            "file": "2012_marsattaque.csv"
+        } 
+    ], 
+    "scales": {
+        "A": [0, 1000, 936, 881, 831, 786, 745, 706, 669, 635, 603, 572, 543, 515, 489, 463, 439, 416, 394, 373, 353, 334, 315, 297, 280, 264, 249, 234, 219, 205, 192, 180, 168, 156, 145, 135, 125, 115, 106, 97, 89, 82, 74, 67, 61, 54, 49, 43, 38, 33, 29, 25, 21, 18, 15, 12, 10, 8, 6, 4, 3, 2, 2, 1, 1],
+        "B": [0, 666, 592, 530, 476, 429, 386, 348, 313, 281, 251, 224, 200, 177, 156, 137, 120, 104, 89, 76, 64, 53, 43, 35, 27, 21, 16, 11, 7, 5, 3, 1, 1],
+        "C": [0, 333, 268, 218, 176, 142, 113, 88, 68, 50, 36, 25, 16, 9, 5, 2, 1],
+        "Z": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    }
+}
+
+
+
+

@@ -10,12 +10,12 @@ cqu42014:
 	sage -python ranking.py -p parameters_2014.json -o 2014-15-CQU4-output
 
 cqu42015:
-	cd 2011-12-CQU4 && sage -python ../ranking.py -p parameters_2014.json
-	cd 2011-12-CQU4 && sage -python ../ranking.py -p parameters_2015_v1.json
-	cd 2011-12-CQU4 && sage -python ../ranking.py -p parameters_2015_v2.json
-	cd 2011-12-CQU4 && sage -python ../ranking.py -p parameters_2015_v3.json
-	cd 2011-12-CQU4 && sage -python ../ranking.py -p parameters_2015_v4.json
-	cd 2011-12-CQU4 && sage -python ../ranking.py -p parameters_2015_v5.json
+	sage -python ranking.py -p parameters_2014.json -o 2014-15-CQU4-output
+	sage -python ranking.py -p parameters_2015_v1.json -o 2014-15-CQU4-output
+	sage -python ranking.py -p parameters_2015_v2.json -o 2014-15-CQU4-output
+	sage -python ranking.py -p parameters_2015_v3.json -o 2014-15-CQU4-output
+	sage -python ranking.py -p parameters_2015_v4.json -o 2014-15-CQU4-output
+	sage -python ranking.py -p parameters_2015_v5.json -o 2014-15-CQU4-output
 
 csv:
 	sage-4.8 -python ranking.py --csv

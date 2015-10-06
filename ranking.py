@@ -487,6 +487,5 @@ if __name__ == '__main__':
         param = options.parameters[:-5]
         output_dir = options.output_dir
         filename  = u"{}/classement_{}.csv".format(output_dir, param)
-        T = self.only_best_table()
-        table_to_csv(T, filename)
+        table_to_csv(c.only_best_table(), filename)
 

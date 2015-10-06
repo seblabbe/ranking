@@ -241,6 +241,7 @@ class Classement(object):
         self._sorted_previous = []
         self._sorted_teams = []
         self._moves = {}
+        self._division = ['AAA', 'AA', 'BB', 'CC', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
 
     def __repr__(self):
         s = "Classement de %s equipes\n" % len(self)
@@ -305,13 +306,16 @@ class Classement(object):
         return L
 
     def number_of_inversions(self, top=32):
-        L = []
+        rows  = [("Tournoi", "Nombre d'inversions")]
+        tot = 0
         for tournoi in self._tournois:
             move_list = self._moves[tournoi]
             #print tournoi, move_list[:top]
             moves = sum(abs(a) for a in move_list[:top])
-            L.append(moves)
-        return L, sum(L)
+            rows.append((tournoi, moves))
+            tot += moves
+        rows.append(('Total', tot))
+        return table(rows=rows, header_row=True)._repr_()+"\n"
 
     def strength5(self, tournoi, best=5):
         r"""
@@ -412,12 +416,12 @@ class Classement(object):
                 csv_writer.writerow(row)
             print "Creation de %s " % filename
 
-    def save_csv_short_table(self):
+    def save_csv_short_table(self, output_dir):
         L = self._equipes.values()
         L.sort(reverse=True)
         title = ["Division", "Position", "Équipe", "Provenance", "Total"]
         filename = today.strftime(u"resume_%Y_%m_%d.csv")
-        with open(filename, 'w') as f:
+        with open(output_dir+"/"+filename, 'w') as f:
             csv_writer = csv.writer(f)
             csv_writer.writerow(title)
             for i, e in enumerate(L):
@@ -611,17 +615,7 @@ import os
 if __name__ == '__main__':
 
     # set the parser
-    usage = u"""
-
-        sage -python cqu4.py
-        sage -python cqu4.py -csv
-
-        sage -python -V
-        Python 2.6.4
-
-    Les autres versions de python fonctionnent mal avec les caractères
-    accentués.
-        """
+    usage = u"""sage -python ranking.py -p parameters_2014.json"""
 
     parser = OptionParser(usage=usage)
     parser.add_option("-a", "--alphabetique",
@@ -630,21 +624,26 @@ if __name__ == '__main__':
     parser.add_option("-c", "--csv",
                       action="store_true", dest="csv",
                       help=u"Créer le fichier csv global")
+    parser.add_option("-i", "--inversions",
+                      action="store", type="int",
+                      dest="inversions", default=0,
+                      help=(u"Afficher le nombre d'inversions par tournois "
+                      u"pour les équipes du top INVERSIONS"))
     parser.add_option("-n", "--nombre",
                       action="store_true", dest="nombre",
                       help=u"Afficher le nombre d'équipes")
     parser.add_option("-s", "--stat",
                       action="store_true", dest="stat",
                       help=u"Afficher statistiques sur la participation")
-    parser.add_option("-t", "--counting_tournaments", type=int, default=3,
-                      action="store",dest="counting_tournaments",
-                      help=u"Nombre de tournois qui comptent.")
-    #parser.add_option("-s", "--size", type="int", dest="size", default=0, help="size")
-    #parser.add_option("-c", "--scale", type="float", dest="scale", default=1, help="scale")
     parser.add_option("-p", "--parameters",
                       action="store", type="string",
                       dest="parameters",
-                      help=u"Tournaments parameters")
+                      help=u"Tournaments parameters (.json file)")
+    parser.add_option("-o", "--output_dir",
+                      action="store", type="string",
+                      default="OUTPUT",
+                      dest="output_dir",
+                      help=u"The output directory")
     (options, args) = parser.parse_args()
 
     #print options
@@ -665,24 +664,20 @@ if __name__ == '__main__':
         T = Tournoi(filename, name, scale_id)
         c.add_tournoi(T)
 
-    print "Inversions:", c.number_of_inversions(top=12)
-
     if options.alphabetique:
         c.print_equipe_alphabetiquement()
     elif options.csv:
-        c.save_csv_short_table()
+        c.save_csv_short_table(options.output_dir)
     elif options.nombre:
         print len(c)
+    elif options.inversions:
+        print c.number_of_inversions(top=options.inversions)
     elif options.stat:
         print c.statistiques_participation()
     else:
-        filename  = u"OUTPUT/classement_{}.csv".format(options.parameters[:-5])
-        #filename  = u"OUTPUT/classement_{}_%Y_%m_%d.csv".format(options.parameters[:-4])
-        #filename = today.strftime(filename)
+        assert options.parameters.endswith('.json'), "parameter file extension must be .json"
+        param = options.parameters[:-5]
+        output_dir = options.output_dir
+        filename  = u"{}/classement_{}.csv".format(output_dir, param)
         c.save_csv_summary(filename)
-        #filename = today.strftime(u"OUTPUT/classement_%Y_%m_%d.html")
-        #if os.system("rst2html.py classement.rst %s" % filename):
-        #    print "erreur avec la commande rst2html"
-        #else:
-        #    print "Création du fichier %s" % filename
 

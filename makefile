@@ -1,13 +1,13 @@
 all: maj
 
 USAU2013:
-	sage -python ranking.py -p parameters_USAU_2013.json
+	sage -python ranking.py -p parameters_USAU_2013.json -o 2013_USAU-output
 
 cqu42011:
-	sage -python ranking.py -p parameters_2011.json
+	sage -python ranking.py -p parameters_2011.json -o 2011-12-CQU4-output
 
 cqu42014:
-	sage -python ranking.py -p parameters_2014.json
+	sage -python ranking.py -p parameters_2014.json -o 2014-15-CQU4-output
 
 cqu42015:
 	cd 2011-12-CQU4 && sage -python ../ranking.py -p parameters_2014.json

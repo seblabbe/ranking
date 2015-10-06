@@ -5,7 +5,7 @@ Pos,Pts,Team name,Best,2nd best,3rd best,Provenance
 4,2461,Legends,4 (835) Coup de Foudre,4 (835) Movember,5 (791) Bye Bye,Québec
 5,2438,Padawan,2 (938) Movember,6 (750) Mars Attaque,6 (750) Bye Bye,"Trois-Rivières,Sherbrooke,Montréal"
 6,2417,Les Outs,4 (835) Bye Bye,5 (791) Mars Attaque,5 (791) Movember,Québec
-7,2306,Bergers,3 (884) Movember,7 (711) Mars Attaque,7 (711) Bye Bye,"Gatineau,Sherbrooke,Montréal,Québec"
+7,2306,Bergers,3 (884) Movember,7 (711) Bye Bye,7 (711) Mars Attaque,"Gatineau,Sherbrooke,Montréal,Québec"
 8,2275,Chainsaw,3 (884) Mars Attaque,6 (750) Coup de Foudre,9 (641) Bye Bye,"Trois-Rivières,Ottawa,Québec"
 9,2157,Trillium Carnage,2 (938) Bye Bye,9 (641) Movember,11 (578) Mars Attaque,"Ontario,Ottawa"
 10,1978,Rookies,5 (791) Coup de Foudre,10 (609) Mars Attaque,11 (578) Movember,Québec
@@ -40,7 +40,7 @@ Pos,Pts,Team name,Best,2nd best,3rd best,Provenance
 39,591,FantasDisc 4,6 (230) Oktober Disk,31 (224) Coup de Foudre,34 (137) Movember,"Sherbrooke,Québec"
 40,533,Connect 4,15 (242) La Flotte,28 (217) Coup de Foudre,15 (74) Bonne annee,"Sherbrooke,Montréal"
 41,474,Ta mère,32 (161) Bye Bye,19 (160) La Flotte,37 (153) Movember,"Drum,Québec,Long,Sherbrooke,Thet,Saguenay"
-42,466,Squall,16 (219) La Flotte,8 (184) Fun E nuF,50 (63) Mars Attaque,"Baie des Chaleurs,Caplan"
+42,466,Squall,16 (219) La Flotte,8 (184) Fun E nuF,50 (63) Mars Attaque,"Caplan,Baie des Chaleurs"
 43,462,Oktopus,30 (188) Bye Bye,33 (149) Coup de Foudre,35 (125) Mars Attaque,Sherbrooke
 44,448,Marcel Leboeuf,27 (232) Coup de Foudre,32 (161) Movember,57 (55) Mars Attaque,"Longueuil,Montréal"
 45,444,Lemon Drop,8 (444) La Flotte,,,Québec
@@ -98,8 +98,8 @@ Pos,Pts,Team name,Best,2nd best,3rd best,Provenance
 97,65,Team You-Hou *,41 (65) Coup de Foudre,,,St-Jean-sur-Richelieu
 98,64,Cobra Kai,49 (64) Mars Attaque,,,Québec
 99,64,Uma Bazooka,93 (64) Mars Attaque,,,Québec
-100,63,El Toro,16 (63) Bonne annee,,,Trois-Rivières
-101,63,Wolfpack,16 (63) Fun E nuF,,,St-John
+100,63,Wolfpack,16 (63) Fun E nuF,,,St-John
+101,63,El Toro,16 (63) Bonne annee,,,Trois-Rivières
 102,60,Va-Comme-J’te-Pousse,75 (34) Mars Attaque,46 (26) Movember,,Québec
 103,58,Rocco,54 (58) Mars Attaque,,,Québec
 104,57,Freez Machines,55 (57) Mars Attaque,,,Québec
@@ -110,9 +110,9 @@ Pos,Pts,Team name,Best,2nd best,3rd best,Provenance
 109,44,Myrmidons,66 (44) Mars Attaque,,,"Trois-Rivières,Alma"
 110,43,Pas-te Toast,18 (43) Bonne annee,,,Ottawa
 111,42,Light Weight Team,68 (42) Mars Attaque,,,Québec
-112,41,Poilus,69 (41) Mars Attaque,,,Quebec
-113,41,KomeBak,44 (41) Coup de Foudre,,,"Sherbrooke,Montréal"
-114,41,Citrons pressés *,44 (41) Coup de Foudre,,,St-Jean-sur-Richelieu
+112,41,Citrons pressés *,44 (41) Coup de Foudre,,,St-Jean-sur-Richelieu
+113,41,Poilus,69 (41) Mars Attaque,,,Quebec
+114,41,KomeBak,44 (41) Coup de Foudre,,,"Sherbrooke,Montréal"
 115,41,Pick-ups,44 (41) Bye Bye,,,Trois-Rivières
 116,38,Greengos,72 (38) Mars Attaque,,,Québec
 117,36,Nussan Family,73 (36) Mars Attaque,,,Québec
@@ -128,8 +128,8 @@ Pos,Pts,Team name,Best,2nd best,3rd best,Provenance
 127,22,Mean Machine,86 (22) Mars Attaque,,,Québec
 128,20,Machines Gump,87 (20) Mars Attaque,,,Québec
 129,19,Belles gueules,47 (19) Coup de Foudre,,,St-Jean-sur-Richelieu
-130,19,MoFOS,21 (19) Bonne annee,,,Ottawa
-131,19,Maritime Mercs,88 (19) Mars Attaque,,,all over
+130,19,Maritime Mercs,88 (19) Mars Attaque,,,all over
+131,19,MoFOS,21 (19) Bonne annee,,,Ottawa
 132,18,Pick-up AJJUQ,89 (18) Mars Attaque,,,Partout
 133,17,Charettes de plastique,90 (17) Mars Attaque,,,Québec
 134,16,Style libre,91 (16) Mars Attaque,,,Montréal

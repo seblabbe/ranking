@@ -1,0 +1,140 @@
+Pos,Pts,Team name,Best,2nd best,3rd best,Provenance
+1,2911, Revolver,1 (1000) USA Championship,1 (1000) US Open,2 (911) West Coast Cup,SW
+2,2746, Doublewide,1 (1000) Colorado Cup,2 (911) Pro Flight Finale,3 (835) US Open,SC
+3,2746, Sockeye,1 (1000) West Coast Cup,2 (911) USA Championship,3 (835) Club Terminus,NW
+4,2670, PoNY,1 (1000) Club Terminus,3 (835) Colorado Cup,3 (835) Chesapeake Invite,NE
+5,2657, Ironside,2 (911) US Open,2 (911) Chesapeake Invite,3 (835) USA Championship,NE
+6,2603, Machine,1 (1000) Heavyweights,3 (835) Pro Flight Finale,4 (768) Club Terminus,GL
+7,2447, Johnny Bravo,2 (911) Colorado Cup,4 (768) USA Championship,4 (768) West Coast Cup,SC
+8,2361, GOAT,1 (1000) Pro Flight Finale,5 (708) Chesapeake Invite,6 (653) Club Terminus,NE
+9,2219, Sub Zero,1 (1000) Chesapeake Invite,5 (708) Heavyweights,9 (511) USA Championship,NC
+10,2166, Chain Lightning,2 (911) Club Terminus,6 (653) Chesapeake Invite,7 (602) Pro Flight Finale,SE
+11,2043, Ring of Fire,3 (835) US Open,6 (653) Pro Flight Finale,8 (555) Chesapeake Invite,SE
+12,1937, High Five,3 (835) Heavyweights,7 (602) Chesapeake Invite,1 (500) No Surf,GL
+13,1927, Rhino,5 (708) West Coast Cup,5 (708) Colorado Cup,9 (511) Club Terminus,NW
+14,1910, Madison Club,2 (911) Heavyweights,7 (602) Colorado Cup,12 (397) Club Terminus,NC
+15,1881, Truck Stop,4 (768) Colorado Cup,7 (602) Club Terminus,9 (511) Chesapeake Invite,MA
+16,1685, Inception,4 (768) Heavyweights,1 (500) Col. Cup noTCT,3 (417) San Diego Slammer,SC
+17,1492, Streetgang,6 (653) Heavyweights,2 (455) San Diego Slammer,4 (384) Cal State,SW
+18,1455, Chicago Club,5 (708) US Open,4 (384) Mot. Throwdown,13 (363) Heavyweights,GL
+19,1408, Florida United,9 (511) Colorado Cup,1 (500) Old Dominion Q.,12 (397) USA Championship,SE
+20,1363, Condors,1 (500) San Diego Slammer,1 (500) Cal State,13 (363) USA Championship,SW
+21,1340, LA Renegade,7 (602) Heavyweights,4 (384) Cal State,5 (354) San Diego Slammer,SW
+22,1284, Madcow,2 (455) Mot. Throwdown,11 (432) Colorado Cup,12 (397) Chesapeake Invite,GL
+23,1252, Cash Crop,10 (471) Chesapeake Invite,12 (397) Colorado Cup,4 (384) Old Dominion Q.,SE
+24,1087, Dire Wolf,2 (455) No Surf,4 (384) Cazenovia,17 (248) Heavyweights,MA
+25,1085, Prairie Fire,6 (653) Colorado Cup,11 (432) Heavyweights,3 (0) NC Reg,NC
+26,1010, Boost Mobile,8 (555) Club Terminus,2 (455) Cal State,5 (0) SW Reg,SW
+27,1007, Medicine Men,12 (397) Heavyweights,5 (354) Old Dominion Q.,9 (256) Cazenovia,MA
+28,986, Mephisto,7 (602) US Open,4 (384) Cazenovia,7 (0) NE Reg,NE
+29,888, Voodoo,10 (471) Colorado Cup,3 (417) San Diego Slammer,4 (0) NW Reg,NW
+30,865, Sprawl,9 (511) Heavyweights,5 (354) San Diego Slammer,4 (0) SW Reg,SW
+31,835, Buzz Bullets,3 (835) West Coast Cup,,,
+32,833, Garuda,8 (555) Heavyweights,8 (278) Cazenovia,4 (0) NE Reg,NE
+33,803, Furious George,10 (471) Club Terminus,14 (332) USA Championship,2 (0) NW Reg,NW
+34,768, Clapham,4 (768) Chesapeake Invite,,,
+35,686, Oaks,5 (354) Cal State,14 (332) Heavyweights,7 (0) SW Reg,SW
+36,656, Castle,5 (354) Mot. Throwdown,15 (302) Heavyweights,5 (0) NC Reg,NC
+37,653, Euforia,6 (653) US Open,,,
+38,632, Sheet Metal,5 (354) No Surf,8 (278) Cazenovia,,
+39,594, Beachfront Property,3 (417) Mot. Throwdown,20 (177) Heavyweights,6 (0) GL Reg,GL
+40,575, Space City Ignite,7 (301) San Diego Slammer,16 (274) Heavyweights,4 (0) SC Reg,SC
+41,562, Chico,6 (326) Cal State,10 (236) San Diego Slammer,,
+42,555, Plex,8 (555) Colorado Cup,5 (0) SC Reg,,SC
+43,555, Ragnarok,8 (555) US Open,,,
+44,534, Gridlock,8 (278) Cal State,9 (256) San Diego Slammer,8 (0) SW Reg,SW
+45,500, Ulysse,1 (500) Cazenovia,,,
+46,471, Brickyard,10 (471) Heavyweights,7 (0) GL Reg,,GL
+47,467, Midnight Meat Train,7 (301) No Surf,14 (166) Mot. Throwdown,12 (0) GL Reg,GL
+48,458, Lake Effect,7 (301) Mot. Throwdown,21 (157) Heavyweights,4 (0) GL Reg,GL
+49,455, Tanasi,2 (455) Old Dominion Q.,7 (0) SE Reg,,SE
+50,455, Powderhogs,2 (455) Col. Cup noTCT,5 (0) NW Reg,,NW
+51,453, Madador,10 (236) No Surf,11 (217) Mot. Throwdown,,
+52,435, BD Air Show,10 (236) Cal State,12 (199) San Diego Slammer,10 (0) SW Reg,SW
+53,432, Oakland,11 (432) Chesapeake Invite,5 (0) MA Reg,,MA
+54,417, Boneyard,3 (417) Old Dominion Q.,,,
+55,417, Choice City Hops,3 (417) Col. Cup noTCT,,,
+56,417, Madcow Y,3 (417) No Surf,,,
+57,405, Inception-Red,4 (384) Col. Cup noTCT,30 (21) Heavyweights,,
+58,399, CAKti,11 (217) No Surf,13 (182) Mot. Throwdown,,
+59,384, Madcow X,4 (384) No Surf,,,
+60,363, Phoenix,13 (363) Colorado Cup,6 (0) NE Reg,,NE
+61,354, Sweet Roll,5 (354) Col. Cup noTCT,11 (0) SC Reg,,SC
+62,354, The Nights Watch,5 (354) Cazenovia,11 (0) NE Reg,,NE
+63,326, Grand Trunk,6 (326) No Surf,,,
+64,326, Vanier Wildcats,6 (326) Cazenovia,,,
+65,326, Floodwall,6 (326) Old Dominion Q.,,,
+66,326, Enigma,6 (326) Mot. Throwdown,10 (0) GL Reg,,GL
+67,301, The Ghosts,7 (301) San Diego Slammer,,,
+68,301, Swell,7 (301) Old Dominion Q.,,,
+69,278, Old Growth,8 (278) Cal State,,,
+70,278, Burnside,8 (278) Old Dominion Q.,,,
+71,278, Jurassic Shark,8 (278) Mot. Throwdown,11 (0) GL Reg,,GL
+72,278, Maverick,8 (278) No Surf,,,
+73,274, Lancaster,16 (274) Colorado Cup,6 (0) MA Reg,,MA
+74,256, Journeymen,9 (256) Cal State,,,
+75,256, Grantham U.,9 (256) No Surf,,,
+76,256, VAlhalla,9 (256) Old Dominion Q.,,,
+77,256, Impulse,9 (256) Mot. Throwdown,,,
+78,237, Hustle,10 (236) Mot. Throwdown,32 (1) Heavyweights,,
+79,236, Triforce,10 (236) Old Dominion Q.,,,
+80,236, Jester,10 (236) Cazenovia,,,
+81,231, Spoiler,12 (199) Mot. Throwdown,29 (32) Heavyweights,,
+82,223, Haymaker,18 (223) Heavyweights,5 (0) GL Reg,,GL
+83,217, Brawl,11 (217) San Diego Slammer,9 (0) SW Reg,,SW
+84,199, ROY,12 (199) No Surf,,,
+85,199, Centretown Gunners,12 (199) Cazenovia,,,
+86,199, Warriors of Rad,12 (199) Cazenovia,,,
+87,199, Gnarwhal,19 (199) Heavyweights,7 (0) NC Reg,,NC
+88,194, INfamous,16 (137) Mot. Throwdown,27 (57) Heavyweights,,
+89,182, Stonefish,13 (182) Cazenovia,16 (0) NE Reg,,NE
+90,166, Youngbloods,14 (166) Cazenovia,11 (0) NE Reg,,NE
+91,151, Flying Pig,15 (151) Mot. Throwdown,,,
+92,137, Freaks Uv Nature,22 (137) Heavyweights,6 (0) SE Reg,,SE
+93,137, Firebird,16 (137) Cazenovia,,,
+94,137, Throw'n Together,16 (137) Cazenovia,,,
+95,134, Illusion,17 (124) Mot. Throwdown,31 (10) Heavyweights,10 (0) NC Reg,NC
+96,119, Mufasa,23 (119) Heavyweights,,,
+97,112, MicroMachines,18 (112) Mot. Throwdown,,,
+98,102, Mad Men,24 (102) Heavyweights,,,
+99,100, Rust Belt War Bonds,19 (100) Mot. Throwdown,,,
+100,89, Salvage 3,20 (89) Mot. Throwdown,,,
+101,86, H1N1,25 (86) Heavyweights,8 (0) NC Reg,,NC
+102,71, yogosbo,26 (71) Heavyweights,,,
+103,44, City Park Ultimate,28 (44) Heavyweights,4 (0) NC Reg,,NC
+104,0, Six Pack,7 (0) SE Reg,,,SE
+105,0, Jollytown Lollipops,9 (0) SE Reg,,,SE
+106,0, Jek Factory,13 (0) NE Reg,,,NE
+107,0, Prairie Squids,16 (0) SE Reg,,,SE
+108,0, HIP,6 (0) SC Reg,,,SC
+109,0, Pride Rock,15 (0) NE Reg,,,NE
+110,0, Red Circus,9 (0) NE Reg,,,NE
+111,0, Rawhide,10 (0) SC Reg,,,SC
+112,0, Nun Cups and the Boyz,7 (0) NW Reg,,,NW
+113,0, Black Penguins,34 (0) Heavyweights,,,
+114,0, Space City Eclipse,7 (0) SC Reg,,,SC
+115,0, Bonehorn,9 (0) NC Reg,,,NC
+116,0, Mota Legal,8 (0) NW Reg,,,NW
+117,0, Southern Hospitality,11 (0) SE Reg,,,SE
+118,0, Climax,6 (0) NC Reg,,,NC
+119,0, Grantham U,9 (0) MA Reg,,,MA
+120,0, Kentucky Flying Circus,8 (0) GL Reg,,,GL
+121,0, Queen City Thunder,15 (0) SE Reg,,,SE
+122,0, Omen,4 (0) SE Reg,,,SE
+123,0, Hippie Mafia,35 (0) Heavyweights,,,
+124,0, Red Tide,7 (0) NE Reg,,,NE
+125,0, Nomo Fogoho,12 (0) SC Reg,,,SC
+126,0, Riverside,9 (0) SC Reg,,,SC
+127,0, Shrimp Boat,9 (0) SE Reg,,,SE
+128,0, Genny Tall Boys,14 (0) NE Reg,,,NE
+129,0, Dark or Light,5 (0) NE Reg,,,NE
+130,0, Big Wrench,9 (0) NE Reg,,,NE
+131,0, Jockamo,13 (0) SE Reg,,,SE
+132,0, Garden State,3 (0) MA Reg,,,MA
+133,0, John Doe,4 (0) MA Reg,,,MA
+134,0, Grass Knuckles,7 (0) SC Reg,,,SC
+135,0, Vicious SharkForce,14 (0) SE Reg,,,SE
+136,0, Hynotoad,7 (0) MA Reg,,,MA
+137,0, Shinigami,33 (0) Heavyweights,,,
+138,0, Ironmen,11 (0) SE Reg,,,SE
+139,0, South Portland Knife Fight,6 (0) NW Reg,,,NW

@@ -4,117 +4,117 @@
         {
             "scale_id": "B", 
             "name": "Chesapeake Invite", 
-            "file": "chesapeake_invite.csv"
+            "file": "2013_USAU/chesapeake_invite.csv"
         }, 
         {
             "scale_id": "B", 
             "name": "Colorado Cup", 
-            "file": "colorado_cup.csv"
+            "file": "2013_USAU/colorado_cup.csv"
         }, 
         {
             "scale_id": "B", 
             "name": "Pro Flight Finale", 
-            "file": "pro_flight_finale.csv"
+            "file": "2013_USAU/pro_flight_finale.csv"
         }, 
         {
             "scale_id": "B", 
             "name": "West Coast Cup", 
-            "file": "west_coast_cup.csv"
+            "file": "2013_USAU/west_coast_cup.csv"
         }, 
         {
             "scale_id": "B", 
             "name": "Club Terminus", 
-            "file": "club_terminus.csv"
+            "file": "2013_USAU/club_terminus.csv"
         }, 
         {
             "scale_id": "B", 
             "name": "Heavyweights", 
-            "file": "heavyweights.csv"
+            "file": "2013_USAU/heavyweights.csv"
         }, 
         {
             "scale_id": "B", 
             "name": "US Open", 
-            "file": "us_open.csv"
+            "file": "2013_USAU/us_open.csv"
         }, 
         {
             "scale_id": "C", 
             "name": "Cal State", 
-            "file": "2013_06_cal_state.csv"
+            "file": "2013_USAU/2013_06_cal_state.csv"
         }, 
         {
             "scale_id": "C", 
             "name": "Cazenovia", 
-            "file": "2013_06_cut.csv"
+            "file": "2013_USAU/2013_06_cut.csv"
         }, 
         {
             "scale_id": "C", 
             "name": "No Surf", 
-            "file": "2013_06_no_surf.csv"
+            "file": "2013_USAU/2013_06_no_surf.csv"
         }, 
         {
             "scale_id": "C", 
             "name": "Old Dominion Q.", 
-            "file": "2013_06_old_dominion_qualif.csv"
+            "file": "2013_USAU/2013_06_old_dominion_qualif.csv"
         }, 
         {
             "scale_id": "C", 
             "name": "Mot. Throwdown", 
-            "file": "2013_07_motown_throwdown.csv"
+            "file": "2013_USAU/2013_07_motown_throwdown.csv"
         }, 
         {
             "scale_id": "C", 
             "name": "San Diego Slammer", 
-            "file": "2013_07_sandiego_slammer.csv"
+            "file": "2013_USAU/2013_07_sandiego_slammer.csv"
         }, 
         {
             "scale_id": "C", 
             "name": "Col. Cup noTCT", 
-            "file": "2013_08_colorado_cup_noTCT.csv"
+            "file": "2013_USAU/2013_08_colorado_cup_noTCT.csv"
         }, 
         {
             "scale_id": "Z", 
             "name": "GL Reg", 
-            "file": "2013_09_gl_reg.csv"
+            "file": "2013_USAU/2013_09_gl_reg.csv"
         }, 
         {
             "scale_id": "Z", 
             "name": "MA Reg", 
-            "file": "2013_09_ma_reg.csv"
+            "file": "2013_USAU/2013_09_ma_reg.csv"
         }, 
         {
             "scale_id": "Z", 
             "name": "NC Reg", 
-            "file": "2013_09_nc_reg.csv"
+            "file": "2013_USAU/2013_09_nc_reg.csv"
         }, 
         {
             "scale_id": "Z", 
             "name": "NE Reg", 
-            "file": "2013_09_ne_reg.csv"
+            "file": "2013_USAU/2013_09_ne_reg.csv"
         }, 
         {
             "scale_id": "Z", 
             "name": "NW Reg", 
-            "file": "2013_09_nw_reg.csv"
+            "file": "2013_USAU/2013_09_nw_reg.csv"
         }, 
         {
             "scale_id": "Z", 
             "name": "SC Reg", 
-            "file": "2013_09_sc_reg.csv"
+            "file": "2013_USAU/2013_09_sc_reg.csv"
         }, 
         {
             "scale_id": "Z", 
             "name": "SE Reg", 
-            "file": "2013_09_se_reg.csv"
+            "file": "2013_USAU/2013_09_se_reg.csv"
         }, 
         {
             "scale_id": "Z", 
             "name": "SW Reg", 
-            "file": "2013_09_sw_reg.csv"
+            "file": "2013_USAU/2013_09_sw_reg.csv"
         }, 
         {
             "scale_id": "B", 
             "name": "USA Championship", 
-            "file": "2013_10_usau_championship.csv"
+            "file": "2013_USAU/2013_10_usau_championship.csv"
         }
     ], 
     "scales": {

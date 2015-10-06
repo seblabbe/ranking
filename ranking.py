@@ -343,7 +343,8 @@ class Classement(object):
     def print_equipe_alphabetiquement(self):
         L = self._equipes.keys()
         for nom in sorted(L):
-            print nom.ljust(20), self._equipes[nom].provenance()
+            equipe = self._equipes[nom]
+            print nom.ljust(40), equipe.provenance(), equipe._positions.keys()
 
     def statistiques_participation(self):
         L = [e.nb_tournois_participes() for e in self._equipes.values()]

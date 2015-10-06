@@ -305,7 +305,7 @@ class Classement(object):
             L.append(0 if diff is None else diff)
         return L
 
-    def number_of_inversions(self, top=32):
+    def number_of_inversions_table(self, top=32):
         rows  = [("Tournoi", "Nombre d'inversions")]
         tot = 0
         for tournoi in self._tournois:
@@ -315,7 +315,7 @@ class Classement(object):
             rows.append((tournoi, moves))
             tot += moves
         rows.append(('Total', tot))
-        return table(rows=rows, header_row=True)._repr_()+"\n"
+        return table(rows=rows, header_row=True)
 
     def strength5(self, tournoi, best=5):
         r"""
@@ -338,107 +338,7 @@ class Classement(object):
     def tournament_size(self, tournoi):
         L = self._equipes.values()
         return sum((1 for e in L if tournoi in e._positions))
-
-    def show(self):
-        L = self._equipes.values()
-        L.sort(reverse=True)
-        for e in L:
-            print e, self.get_move_str(e)
-    def print_equipe_alphabetiquement(self):
-        L = self._equipes.keys()
-        for nom in sorted(L):
-            equipe = self._equipes[nom]
-            print nom.ljust(40), equipe.provenance(), equipe._positions.keys()
-
-    def statistiques_participation(self):
-        L = [e.nb_tournois_participes() for e in self._equipes.values()]
-        M = max(L)
-        rows = [("Number of tournaments played", "Number of teams")]
-        for i in range(1, M+1):
-            rows.append( (i, L.count(i)) )
-        return table(rows=rows, header_row=True)._repr_()+"\n"
-    def latex_table(self):
-        L = self._equipes.values()
-        L.sort(reverse=True)
-        s = '\\begin{tabular}{c|c|c|c}\n'
-        s += "Position & Équipe & Points & Variation \\\\ \n"
-        s += "\\hline \n"
-        for i, e in enumerate(L):
-            s += "%s & %s & %s & %s \\\\ \n" % (i+1, e._nom, e.total(), self.get_move_str(e))
-        s += '\\end{tabular}\n'
-        return s
-
-    def rst_table_avec_resultats(self):
-        L = self._equipes.values()
-        L.sort(reverse=True)
-        s = ""
-        s += "+----------+----------------------------------+--------------------------------+--------+-----------+\n"
-        s += "| Position | Équipe                           | Resultats                      | Points | Variation |\n"
-        s += "+----------+----------------------------------+--------------------------------+--------+-----------+\n"
-        for i, e in enumerate(L):
-            s += "| %8s | %32s | %30s | %6s | %9s |\n" % (i+1, e._nom, e._positions, e.total(), self.get_move_str(e))
-            s += "+----------+----------------------------------+--------------------------------+--------+-----------+\n"
-        return s
-
-    def rst_table(self):
-        L = self._equipes.values()
-        L.sort(reverse=True)
-        s = ""
-        s += "+----------+----------------------------------+--------+-----------+\n"
-        s += "| Position | Équipe                           | Points | Variation |\n"
-        s += "+----------+----------------------------------+--------+-----------+\n"
-        for i, e in enumerate(L):
-            s += "| %8s | %32s | %6s | %9s |\n" % (i+1, e._nom, e.total(), self.get_move_str(e))
-            s += "+----------+----------------------------------+--------+-----------+\n"
-        return s
-
-    def save_rst_table(self):
-        filename = 'cqu4_classement_fictif.txt'
-        f = open(filename, 'w')
-        f.write(self.rst_table())
-        f.close()
-        print "Creation de %s " % filename
-
-    def save_csv_table(self):
-        L = self._equipes.values()
-        L.sort(reverse=True)
-        title = ["Division", "Position", "Équipe", "Provenance"]
-        title += ["Pos", "Pts", 'ES'] * len(self._tournois)
-        title += ["Total", "Variation"]
-        filename = 'classement.csv'
-        with open(filename, 'w') as f:
-            csv_writer = csv.writer(f)
-            csv_writer.writerow(title)
-            for i, e in enumerate(L):
-                row = [self.division(i+1), i+1, e._nom, e.provenance()]
-                row += e.pos_pts_es_ordonnes(self._tournois)
-                row += [e.total(), self.get_move_str(e)]
-                csv_writer.writerow(row)
-            print "Creation de %s " % filename
-
-    def save_csv_short_table(self, output_dir):
-        L = self._equipes.values()
-        L.sort(reverse=True)
-        title = ["Division", "Position", "Équipe", "Provenance", "Total"]
-        filename = today.strftime(u"resume_%Y_%m_%d.csv")
-        with open(output_dir+"/"+filename, 'w') as f:
-            csv_writer = csv.writer(f)
-            csv_writer.writerow(title)
-            for i, e in enumerate(L):
-                row = [self.division(i+1), i+1, e._nom, e.provenance(), e.total()]
-                csv_writer.writerow(row)
-            print "Creation de %s " % filename
-
-    def sage_table(self):
-        L = self._equipes.values()
-        L.sort(reverse=True)
-        nb_tournois = len(self._tournois)
-
-        T1 = ''
-        T1 += "Mis à jour le %s.\n" % today.strftime(u"%d %B %Y")
-        T1 += "\nNombre total d'équipes : %s\n\n" % len(c)
-        T1 += self.statistiques_participation()
-
+    def tournaments_stat_table(self):
         rows = [("Tournaments considered", "Points for champion", "#teams getting points", 
                  "#teams", "Strength")]
         for T in self._tournois:
@@ -446,8 +346,48 @@ class Classement(object):
             rows.append( (T.long_name(), scale[1], len(scale)-1, 
                           self.tournament_size(T), 
                           "5/%s and %s/20"%(self.strength5(T), self.strength20(T))))
-        T2 = table(rows=rows,header_row=True)
+        return table(rows=rows,header_row=True)
 
+
+    def show(self):
+        L = self._equipes.values()
+        L.sort(reverse=True)
+        for e in L:
+            print e, self.get_move_str(e)
+    def equipe_alphabetiquement_table(self):
+        L = self._equipes.keys()
+        rows = []
+        for nom in sorted(L):
+            equipe = self._equipes[nom]
+            tournois = ", ".join([T.long_name() for T in equipe._positions.keys()])
+            rows.append(( nom.ljust(40), equipe.provenance(), tournois))
+        return table(rows=rows)
+
+    def statistiques_participation_table(self):
+        L = [e.nb_tournois_participes() for e in self._equipes.values()]
+        M = max(L)
+        rows = [("Number of tournaments played", "Number of teams")]
+        for i in range(1, M+1):
+            rows.append( (i, L.count(i)) )
+        return table(rows=rows, header_row=True)
+
+    def full_table(self):
+        L = self._equipes.values()
+        L.sort(reverse=True)
+        title = ["Division", "Position", "Équipe", "Provenance"]
+        title += ["Pos", "Pts", 'ES'] * len(self._tournois)
+        title += ["Total", "Variation"]
+        rows = []
+        rows.append(title)
+        for i, e in enumerate(L):
+            row = [self.division(i+1), i+1, e._nom, e.provenance()]
+            row += e.pos_pts_es_ordonnes(self._tournois)
+            row += [e.total(), self.get_move_str(e)]
+            rows.append(row)
+        return table(rows=rows,header_row=True)
+
+
+    def only_best_table(self):
         counting = self._counting_tournaments
         #row_header = ["Pos", "Pts", "#Tourn", "Team name", "Region"]
         #row_header += ['Best', '2nd best', '3rd best', '4th best (does not count)']
@@ -455,6 +395,8 @@ class Classement(object):
         row_header += ['Best', '2nd best', '3rd best', '4th best'][:counting]
         row_header += ['Provenance']
         rows = [row_header]
+        L = self._equipes.values()
+        L.sort(reverse=True)
         for i, e in enumerate(L):
             row = [i+1]
             row.append(e.total())
@@ -466,126 +408,7 @@ class Classement(object):
             row.extend(bests[:counting])
             row.append(e.provenance())
             rows.append(row)
-        T3 = table(rows=rows,header_row=True)
-        #return "\n\n".join((T1, T2, T3))
-        return (T1, T2, T3)
-
-    def txt_table_provincial(self):
-        L = self._equipes.values()
-        L.sort(reverse=True)
-        nb_tournois = len(self._tournois)
-        col_width       = [9, 9, 10, 6, 5, 23] + [4,6,4] * nb_tournois + [20]
-        col_width_title = [9, 9, 10, 6, 5, 23] + [14]    * nb_tournois + [20]
-        def line_str(line, col_width, left=[0,1,2,3], right=[]):
-            L = []
-            for i,t,w in zip(count(), line, col_width):
-                t = str(t)
-                if i in left:
-                    L.append(t.ljust(w + nombre_car_accentues(t)))
-                    #L.append(t.ljust(w))
-                elif i in right:
-                    L.append(t.rjust(w + nombre_car_accentues(t)))
-                    #L.append(t.rjust(w))
-                else:
-                    L.append(t.center(w + nombre_car_accentues(t)))
-                    #L.append(t.center(w))
-            return "".join(L) + "\n"
-        title = ["", "", "", "", "", ""]
-        title += [T.long_name() for T in self._tournois]
-        title += [""]
-        s = ''
-        s += "Mis à jour le %s.\n" % today.strftime(u"%d %B %Y")
-        s += "\nStatistiques de participation :\n\n"
-        s += self.statistiques_participation()
-        s += "Nombre total d'équipes : %s\n" % len(c)
-        souligne = ['-'*(i-1) for i in col_width_title]
-        subtitle = ["Division", "Position"]
-        subtitle += ["Points", "Var", "NbTP"]
-        subtitle += ["Équipe"]
-        subtitle += ['Pos', 'Pts', 'ES']  * nb_tournois
-        subtitle += ["Provenance"]
-        titre_str = ''
-        titre_str += line_str(title, col_width_title,left=range(16))
-        titre_str += line_str(souligne, col_width_title, left=range(16))
-        titre_str += line_str(subtitle, col_width, left=range(7))
-        titre_str += line_str(souligne, col_width_title, left=range(16))
-        s += titre_str
-        for i, e in enumerate(L):
-            line = [self.division(i+1), i%16 +1]
-            line += [e.total(), self.get_move_str(e)]
-            line += [e.nb_tournois_participes()]
-            line += [e._nom]
-            line += e.pos_pts_es_ordonnes(self._tournois)
-            line += [e.provenance()]
-            if i > 0 and i % 16 == 0:
-                s += "\n"
-                #s += titre_str
-            s += line_str(line, col_width, left=range(7))
-        return s
-    def txt_table_partiel(self, L, categorie_name):
-        L = [self[nom] for nom in L]
-        L.sort(reverse=True)
-        nb_tournois = len(self._tournois)
-        col_width       = [9, 9, 10, 6, 23, 28] + [4,6,4] * nb_tournois
-        col_width_title = [9, 9, 10, 6, 23, 28] + [14]    * nb_tournois
-        def line_str(line, col_width, left=[0,1,2,3], right=[]):
-            L = []
-            for i,t,w in zip(count(), line, col_width):
-                t = str(t)
-                if i in left:
-                    #L.append(t.ljust(w + nombre_car_accentues(t)))
-                    L.append(t.ljust(w))
-                elif i in right:
-                    #L.append(t.rjust(w + nombre_car_accentues(t)))
-                    L.append(t.rjust(w))
-                else:
-                    #L.append(t.center(w + nombre_car_accentues(t)))
-                    L.append(t.center(w))
-            return "".join(L) + "\n"
-        title = ["", "", "", "", "", ""]
-        title += [T.long_name() for T in self._tournois]
-        s = ''
-        souligne = ['-'*(i-1) for i in col_width_title]
-        subtitle = ["Division", "Position"] 
-        subtitle += ["Points", "Var"]
-        subtitle += ["Équipe", "Provenance"]
-        subtitle += ['Pos', 'Pts', 'ES']  * nb_tournois
-        titre_str = ''
-        titre_str += line_str(title, col_width_title,left=range(16))
-        titre_str += line_str(souligne, col_width_title, left=range(16))
-        titre_str += line_str(subtitle, col_width, left=range(6))
-        titre_str += line_str(souligne, col_width_title, left=range(16))
-        s += titre_str
-        for i, e in enumerate(L):
-            line = [categorie_name, i+1] 
-            line += [e.total(), self.get_move_str(e)]
-            line += [e._nom, e.provenance()]
-            line += e.pos_pts_es_ordonnes(self._tournois)
-            s += line_str(line, col_width, left=range(6))
-        return s
-    def save_txt_table_provincial(self, filename):
-        s = self.txt_table_provincial()
-        with open(filename, 'w') as f:
-            f.write(s)
-        print "Creation de %s " % filename
-
-    def save_sage_table(self, filename):
-        (T1, T2, T3) = self.sage_table()
-        s = "\n\n".join((T1, T2.__repr__(), T3.__repr__()))
-        with open(filename, 'w') as f:
-            f.write(s)
-        print "Creation de %s " % filename
-
-    def save_csv_summary(self, filename):
-        (T1, T2, T3) = self.sage_table()
-        table_to_csv(T3, filename)
-
-    def save_txt_table_partiel(self, L, categorie_name):
-        s = self.txt_table_partiel(L, categorie_name)
-        filename = 'classement_%s.txt' % categorie_name
-        with open(filename, 'w') as f:
-            f.write(s)
-        print "Creation de %s " % filename
+        return table(rows=rows,header_row=True)
 
 ################################
 # Nombre de caracteres accentues
@@ -621,14 +444,14 @@ if __name__ == '__main__':
     parser.add_option("-a", "--alphabetique",
                       action="store_true", dest="alphabetique",
                       help=u"Afficher les équipes alphabétiquement")
-    parser.add_option("-c", "--csv",
-                      action="store_true", dest="csv",
-                      help=u"Créer le fichier csv global")
     parser.add_option("-i", "--inversions",
                       action="store", type="int",
                       dest="inversions", default=0,
                       help=(u"Afficher le nombre d'inversions par tournois "
                       u"pour les équipes du top INVERSIONS"))
+    parser.add_option("-f", "--full",
+                      action="store_true", dest="full",
+                      help=u"Afficher la table complete")
     parser.add_option("-n", "--nombre",
                       action="store_true", dest="nombre",
                       help=u"Afficher le nombre d'équipes")
@@ -665,19 +488,23 @@ if __name__ == '__main__':
         c.add_tournoi(T)
 
     if options.alphabetique:
-        c.print_equipe_alphabetiquement()
-    elif options.csv:
-        c.save_csv_short_table(options.output_dir)
+        print c.equipe_alphabetiquement_table()
     elif options.nombre:
         print len(c)
     elif options.inversions:
-        print c.number_of_inversions(top=options.inversions)
+        print c.number_of_inversions_table(top=options.inversions)
     elif options.stat:
-        print c.statistiques_participation()
+        print "Nombre d'equipes", len(c)
+        print c.statistiques_participation_table()
+        print c.tournaments_stat_table()
+        print c.number_of_inversions_table(top=20)
+    elif options.full:
+        print c.full_table()
     else:
         assert options.parameters.endswith('.json'), "parameter file extension must be .json"
         param = options.parameters[:-5]
         output_dir = options.output_dir
         filename  = u"{}/classement_{}.csv".format(output_dir, param)
-        c.save_csv_summary(filename)
+        T = self.only_best_table()
+        table_to_csv(T, filename)
 

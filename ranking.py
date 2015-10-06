@@ -243,6 +243,22 @@ class Classement(object):
         self._moves = {}
         self._division = ['AAA', 'AA', 'BB', 'CC', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
 
+    @classmethod
+    def from_parameters(cls, filename):
+        with open(filename, 'r') as f:
+            import json
+            param = json.load(f)
+        scales = param['scales']
+        counting_tournaments = param['counting_tournaments']
+        c = cls(scales, counting_tournaments)
+        for T in param['tournaments']:
+            filename = T['file']
+            name = T['name']
+            scale_id = T['scale_id']
+            T = Tournoi(filename, name, scale_id)
+            c.add_tournoi(T)
+        return c
+
     def __repr__(self):
         s = "Classement de %s equipes\n" % len(self)
         return s
@@ -255,6 +271,11 @@ class Classement(object):
 
     def division(self, i):
         return self._division[(i-1) // 16]
+    def sorted_team_list(self):
+        return self._sorted_teams
+        #L = self._equipes.values()
+        #L.sort(reverse=True)
+        #return L
 
     def add_tournoi(self, tournoi):
         self._sorted_previous = self._sorted_teams
@@ -272,7 +293,7 @@ class Classement(object):
             esprit_pts = 50 if esprit else 0
             equipe.add_resultat(tournoi, position, points, esprit_pts)
         self._sorted_teams = sorted(self._equipes.values(), reverse=True)
-        self._moves[tournoi] = c.get_move_list()
+        self._moves[tournoi] = self.get_move_list()
 
     def get_previous_position(self, equipe):
         if equipe in self._sorted_previous:
@@ -300,8 +321,8 @@ class Classement(object):
 
     def get_move_list(self):
         L = []
-        for eq in c._sorted_teams:
-            diff = c.get_move(eq)
+        for eq in self._sorted_teams:
+            diff = self.get_move(eq)
             L.append(0 if diff is None else diff)
         return L
 
@@ -321,7 +342,7 @@ class Classement(object):
         r"""
         The best 5 teams of a tournaments finished in the top what overall?
         """
-        L = sorted(self._equipes.values(), reverse=True)
+        L = self.sorted_team_list()
         s = 0
         for i,e in enumerate(L):
             if tournoi in e._positions:
@@ -332,7 +353,7 @@ class Classement(object):
         r"""
         How many of top 20 went to the tournament?
         """
-        L = sorted(self._equipes.values(), reverse=True)
+        L = self.sorted_team_list()
         return sum((1 for e in L[:top] if tournoi in e._positions))
 
     def _tournament_size(self, tournoi):
@@ -348,11 +369,8 @@ class Classement(object):
                           "5/%s and %s/20"%(self._strength5(T), self._strength20(T))))
         return table(rows=rows,header_row=True)
 
-
     def show(self):
-        L = self._equipes.values()
-        L.sort(reverse=True)
-        for e in L:
+        for e in self.sorted_team_list():
             print e, self.get_move_str(e)
     def equipe_alphabetiquement_table(self):
         L = self._equipes.keys()
@@ -372,8 +390,7 @@ class Classement(object):
         return table(rows=rows, header_row=True)
 
     def full_table(self):
-        L = self._equipes.values()
-        L.sort(reverse=True)
+        L = self.sorted_team_list()
         title = ["Division", "Position", "Équipe", "Provenance"]
         title += ["Pos", "Pts", 'ES'] * len(self._tournois)
         title += ["Total", "Variation"]
@@ -387,13 +404,15 @@ class Classement(object):
         return table(rows=rows,header_row=True)
 
 
-    def only_best_table(self):
+    def only_best_table(self, compare_to=None):
         counting = self._counting_tournaments
         #row_header = ["Pos", "Pts", "#Tourn", "Team name", "Region"]
         #row_header += ['Best', '2nd best', '3rd best', '4th best (does not count)']
         row_header = ["Pos", "Pts", "Team name"]
         row_header += ['Best', '2nd best', '3rd best', '4th best'][:counting]
         row_header += ['Provenance']
+        if compare_to:
+            row_header += ['Official']
         rows = [row_header]
         L = self._equipes.values()
         L.sort(reverse=True)
@@ -407,6 +426,10 @@ class Classement(object):
                 bests += [""] * (4-len(bests))
             row.extend(bests[:counting])
             row.append(e.provenance())
+            if compare_to:
+                pos = compare_to.index(e._nom)
+                move = pos - i
+                row.append("{} ({})".format(pos+1, move))
             rows.append(row)
         return table(rows=rows,header_row=True)
 
@@ -416,6 +439,7 @@ class Classement(object):
 ################################
 from optparse import OptionParser
 import os
+
 
 if __name__ == '__main__':
 
@@ -444,6 +468,10 @@ if __name__ == '__main__':
                       action="store", type="string",
                       dest="parameters",
                       help=u"Tournaments parameters (.json file)")
+    parser.add_option("-b", "--base",
+                      action="store", type="string",
+                      dest="base_parameters",
+                      help=u"Base tournaments parameters to compare with (.json file)")
     parser.add_option("-o", "--output_dir",
                       action="store", type="string",
                       default="OUTPUT",
@@ -454,20 +482,8 @@ if __name__ == '__main__':
     #print options
     #print args
 
-    all_tournaments = {}
-    with open(options.parameters, 'r') as f:
-        import json
-        D = json.load(f)
+    c = Classement.from_parameters(options.parameters)
 
-    scales = D['scales']
-    counting_tournaments = D['counting_tournaments']
-    c = Classement(scales, counting_tournaments)
-    for T in D['tournaments']:
-        filename = T['file']
-        name = T['name']
-        scale_id = T['scale_id']
-        T = Tournoi(filename, name, scale_id)
-        c.add_tournoi(T)
 
     if options.alphabetique:
         print c.equipe_alphabetiquement_table()
@@ -487,5 +503,10 @@ if __name__ == '__main__':
         param = options.parameters[:-5]
         output_dir = options.output_dir
         filename  = u"{}/classement_{}.csv".format(output_dir, param)
-        table_to_csv(c.only_best_table(), filename)
+        if options.base_parameters:
+            c_base = Classement.from_parameters(options.base_parameters)
+            compare_to = [e._nom for e in c_base.sorted_team_list()]
+        else:
+            compare_to = None
+        table_to_csv(c.only_best_table(compare_to), filename)
 

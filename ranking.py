@@ -408,16 +408,21 @@ class Classement(object):
         counting = self._counting_tournaments
         #row_header = ["Pos", "Pts", "#Tourn", "Team name", "Region"]
         #row_header += ['Best', '2nd best', '3rd best', '4th best (does not count)']
-        row_header = ["Pos", "Pts", "Team name"]
-        row_header += ['Best', '2nd best', '3rd best', '4th best'][:counting]
-        row_header += ['Provenance']
+        row_header = ["Pos"] 
         if compare_to:
             row_header += ['Official']
+        row_header += ["Pts", "Team name"]
+        row_header += ['Best', '2nd best', '3rd best', '4th best'][:counting]
+        row_header += ['Provenance']
         rows = [row_header]
         L = self._equipes.values()
         L.sort(reverse=True)
         for i, e in enumerate(L):
             row = [i+1]
+            if compare_to:
+                pos = compare_to.index(e._nom)
+                move = pos - i
+                row.append("{} ({})".format(pos+1, move))
             row.append(e.total())
             #row.append(e.nb_tournois_participes())
             row.append(e._nom)
@@ -426,10 +431,6 @@ class Classement(object):
                 bests += [""] * (4-len(bests))
             row.extend(bests[:counting])
             row.append(e.provenance())
-            if compare_to:
-                pos = compare_to.index(e._nom)
-                move = pos - i
-                row.append("{} ({})".format(pos+1, move))
             rows.append(row)
         return table(rows=rows,header_row=True)
 

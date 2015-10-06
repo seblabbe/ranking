@@ -1,155 +1,190 @@
 Pos,Pts,Team name,Best,2nd best,Provenance
-1,1986,Ninjax,1 (1050) Movember,2 (936) Coup de Foudre,"Trois-Rivières,Montréal,Saguenay"
-2,1881,P'tits Ménés,1 (1000) Bye Bye,3 (881) Coup de Foudre,"Gatineau,Sherbrooke,Montréal,Québec"
-3,1881,Turbo Fluo,1 (1000) Coup de Foudre,3 (881) Bye Bye,"La Province,Sherbrooke,Montréal,Québec"
-4,1681,Padawan,2 (936) Movember,6 (745) Bye Bye,"Trois-Rivières,Sherbrooke,Montréal"
-5,1662,Legends,4 (831) Coup de Foudre,4 (831) Movember,Québec
-6,1617,Les Outs,4 (831) Bye Bye,5 (786) Movember,Québec
-7,1587,Bergers,3 (881) Movember,7 (706) Bye Bye,"Gatineau,Sherbrooke,Montréal,Québec"
-8,1571,Trillium Carnage,2 (936) Bye Bye,9 (635) Movember,"Ontario,Ottawa"
-9,1380,Chainsaw,6 (745) Coup de Foudre,9 (635) Bye Bye,"Trois-Rivières,Ottawa,Québec"
-10,1358,Rookies,5 (786) Coup de Foudre,11 (572) Movember,Québec
-11,1338,Sugar Mammies,8 (669) Bye Bye,8 (669) Movember,Montréal
-12,1272,Mess around,8 (669) Coup de Foudre,10 (603) Movember,Montréal
-13,1195,Commando,7 (706) Movember,14 (489) Coup de Foudre,Sherbrooke
-14,1115,Caribou,11 (572) Coup de Foudre,12 (543) Movember,Sherbrooke
-15,1066,International,10 (603) Bye Bye,15 (463) Movember,"Trois-Rivières,Sherbrooke,Montréal"
-16,1061,KGB,11 (572) Bye Bye,14 (489) Movember,Québec
-17,963,Tux,1 (500) Oktober Disk,15 (463) Coup de Foudre,"Trois-Rivières,Québec"
-18,954,Captain Morgan,13 (515) Coup de Foudre,16 (439) Bye Bye,"Trois-Rivières,Rimouski,Montréal,Québec"
-19,937,Rejected,12 (543) Bye Bye,18 (394) Movember,Montréal
-20,916,Dynamite,12 (543) Coup de Foudre,19 (373) Movember,"Gatineau,Ottawa"
-21,905,Sweet Dreams,17 (466) Bye Bye,16 (439) Movember,Trois-Rivières
-22,810,Diskover,17 (416) Movember,18 (394) Bye Bye,Trois-Rivières
-23,792,Wasabi,16 (439) Coup de Foudre,20 (353) Bye Bye,Montréal
-24,767,Chiefs,18 (394) Coup de Foudre,19 (373) Bye Bye,"Ste-Adèle,Montréal"
-25,732,Voodoo,3 (398) Oktober Disk,21 (334) Coup de Foudre,"Trois-Rivières,Sherbrooke"
-26,680,8-piece Luggage Set,17 (416) Coup de Foudre,25 (264) Movember,"Gatineau,Hull,Ottawa"
-27,668,Sales-Add,21 (334) Bye Bye,21 (334) Movember,Québec
-28,655,Squeezy Lemons,2 (444) Oktober Disk,9 (211) Bonne annee,St-Jean-sur-Richelieu
-29,637,Sunrise,5 (322) Oktober Disk,22 (315) Movember,Québec
-30,622,Kraken,19 (373) Coup de Foudre,26 (249) Bye Bye,Sherbrooke
-31,577,Mon équipe,4 (358) Oktober Disk,28 (219) Bye Bye,Sherbrooke
-32,545,Absolute,27 (284) Movember,7 (261) La Flotte,"Sherbrooke,Montréal"
-33,520,FantasDisc 4,6 (290) Oktober Disk,31 (230) Coup de Foudre,"Sherbrooke,Québec"
-34,498,Poupix,26 (249) Coup de Foudre,26 (249) Movember,Montréal
-35,483,Ons'Kasse,25 (264) Bye Bye,28 (219) Movember,"Sherbrooke,Montréal"
-36,464,Trick or Treat,23 (297) Coup de Foudre,14 (167) Bonne annee,Québec
-37,444,Mess Nationale,2 (444) Bonne annee,,Montréal
-38,402,Marcel Leboeuf,27 (234) Coup de Foudre,32 (168) Movember,"Longueuil,Montréal"
-39,398,Family Feud,3 (398) Bonne annee,,Ottawa
-40,358,G's Pot,4 (358) Bonne annee,,Guelph
-41,348,Oktopus,30 (192) Bye Bye,33 (156) Coup de Foudre,Sherbrooke
-42,333,Ta mère,32 (168) Bye Bye,37 (165) Movember,"Drum,Québec,Long,Sherbrooke,Thet,Saguenay"
-43,324,Morues,10 (189) Oktober Disk,35 (135) Movember,Gaspé
-44,322,Connect 4,28 (219) Coup de Foudre,15 (103) La Flotte,"Sherbrooke,Montréal"
-45,322,Watch the Thrown,5 (322) Bonne annee,,Ottawa
-46,322,DisTrakFUL,7 (261) Oktober Disk,44 (61) Movember,Repentigny
-47,300,Citrons pressés,9 (211) Oktober Disk,40 (89) Movember,St-Jean-sur-Richelieu
-48,294,Piranhas,11 (169) Oktober Disk,36 (125) Coup de Foudre,Sherbrooke
-49,289,Disklock,12 (150) Oktober Disk,40 (139) Coup de Foudre,Trois-Rivières
-50,280,Nostalgia,24 (280) Bye Bye,,Montréal
-51,280,AuRéoLeS,34 (145) Coup de Foudre,35 (135) Bye Bye,Montréal
-52,280,Gushmu,24 (280) Bye Bye,37 (0) Mars Attaque,Québec
-53,260,Ani's chicks,35 (135) Coup de Foudre,36 (125) Movember,Montréal
-54,241,Wernesgruner,8 (235) Oktober Disk,28 (6) Bonne annee,"Saguenay-Lac-St-Jean,Sherbrooke,Québec"
-55,235,Lemon Drop,8 (235) La Flotte,,Québec
-56,227,Booms,15 (153) Oktober Disk,42 (74) Coup de Foudre,"Sherbrooke,Montréal,Saguenay"
-57,191,Team You-Hou,14 (117) Oktober Disk,42 (74) Movember,St-Jean-sur-Richelieu
-58,156,Robot Rock,33 (156) Movember,,Montréal
-59,150,Delta Force,12 (150) Bonne annee,,Sherbrooke
-60,150,Mad Ployes,12 (150) La Flotte,3 (0) Fun E nuF,Edmundston
-61,133,Saïmiris,13 (133) Oktober Disk,,St-Jean-sur-Richelieu
-62,128,Bretzels,16 (90) Oktober Disk,48 (38) Movember,Montréal
-63,115,Mofos,37 (115) Coup de Foudre,,Ottawa
-64,106,Double zebras,38 (106) Bye Bye,70 (0) Mars Attaque,"Trois-Rivières,Québec"
-65,98,Charrue,20 (98) La Flotte,10 (0) Fun E nuF,Gaspé
-66,92,Grues d’acajou,43 (67) Movember,51 (25) Bye Bye,Saguenay
-67,92,Wannabus,46 (49) Bye Bye,47 (43) Movember,Montréal
-68,90,Squall,16 (90) La Flotte,8 (0) Fun E nuF,"Caplan,Baie des Chaleurs"
-69,90,El Toro,16 (90) Bonne annee,,Trois-Rivières
-70,89,Moby disk,40 (89) Bye Bye,,Montréal
-71,82,Team You-Hou *,41 (82) Coup de Foudre,,St-Jean-sur-Richelieu
-72,78,Paix et Sérénité,17 (78) La Flotte,,Rimouski
-73,74,Cocktail,42 (74) Bye Bye,51 (0) Mars Attaque,Québec
-74,73,Nordet,21 (40) La Flotte,49 (33) Bye Bye,Rimouski
-75,67,Pas-te Toast,18 (67) Bonne annee,,Ottawa
-76,67,Dirty spikes,43 (67) Bye Bye,58 (0) Mars Attaque,Québec
-77,61,Citrons pressés *,44 (61) Coup de Foudre,,St-Jean-sur-Richelieu
-78,61,KomeBak,44 (61) Coup de Foudre,,"Sherbrooke,Montréal"
-79,61,Pick-ups,44 (61) Bye Bye,,Trois-Rivières
-80,54,CPX,45 (54) Bye Bye,61 (0) Mars Attaque,Québec
-81,54,Licornes,45 (54) Coup de Foudre,,St-Jean-sur-Richelieu
-82,50,Tree Huckers,20 (50) Mars Attaque,2 (0) Fun E nuF,Moncton
-83,50,Pouliches volantes,6 (50) Fun E nuF,,Rimouski
-84,50,Uma Bazooka,93 (50) Mars Attaque,,Québec
-85,49,Va-Comme-J’te-Pousse,46 (49) Movember,75 (0) Mars Attaque,Québec
-86,49,Why not coconut,46 (49) Coup de Foudre,,Sherbrooke
-87,43,Belles gueules,47 (43) Coup de Foudre,,St-Jean-sur-Richelieu
-88,40,MoFOS,21 (40) Bonne annee,,Ottawa
-89,38,Masterchief,48 (38) Coup de Foudre,,Sherbrooke
-90,33,Match and mix,22 (33) La Flotte,,"Sherbrooke,Montréal"
-91,33,Fence Post,22 (33) Bonne annee,,Ottawa
-92,26,Schweddy Discs,23 (26) Bonne annee,,Ottawa
-93,26,Subasko,23 (26) La Flotte,,Baie des Chaleurs
-94,21,Medu,52 (21) Bye Bye,,Montréal
-95,21,Tête dans l'cul,24 (21) Bonne annee,,Montréal
-96,16,BUS,25 (16) Bonne annee,,Ottawa
-97,16,Melting Pot,25 (16) La Flotte,,"Rimouski,Québec"
-98,12,Bucks,26 (12) Bonne annee,,Buckingham
-99,12,Might and Magic,26 (12) La Flotte,,La Pocatière
-100,8,Atomes crochus,27 (8) La Flotte,,"Rimouski,Québec"
-101,8,Sockeyed,27 (8) Bonne annee,,Ottawa
-102,4,Cyclones,29 (4) Bonne annee,,Gatineau
-103,0,Mammouths laineux,92 (0) Mars Attaque,,Québec-Rimouski
-104,0,Mr Freeze,84 (0) Mars Attaque,,Québec
-105,0,Team Great Parking,7 (0) Fun E nuF,,Moncton
-106,0,Disco planes,103 (0) Mars Attaque,,Montreal
-107,0,Jo lies,38 (0) Mars Attaque,,Quebec
-108,0,Couvercle de plastique,83 (0) Mars Attaque,,Québec
-109,0,Chinook Old School,41 (0) Mars Attaque,,Québec
-110,0,Alizé,9 (0) Fun E nuF,78 (0) Mars Attaque,Amqui
-111,0,Zestes,96 (0) Mars Attaque,,Montréal
-112,0,UMCE,12 (0) Fun E nuF,,Edmundston
-113,0,Style libre,91 (0) Mars Attaque,,Montréal
-114,0,Pits pits,104 (0) Mars Attaque,,Montréal
-115,0,Brodie's team,44 (0) Mars Attaque,,Québec
-116,0,Notorious slugs,4 (0) Fun E nuF,,Fredericton
-117,0,Cobra Kai,49 (0) Mars Attaque,,Québec
-118,0,Rats De Swompe,97 (0) Mars Attaque,,Montréal
-119,0,Poilus,69 (0) Mars Attaque,,Quebec
-120,0,Charettes de plastique,90 (0) Mars Attaque,,Québec
-121,0,Zazzle,5 (0) Fun E nuF,63 (0) Mars Attaque,Moncton
-122,0,Steve French,1 (0) Fun E nuF,17 (0) Mars Attaque,Fredericton
-123,0,Stéréo,100 (0) Mars Attaque,,Sherbrooke
-124,0,Freez Machines,55 (0) Mars Attaque,,Québec
-125,0,Les 109,99 (0) Mars Attaque,,Quebec
-126,0,Chapo Poilu,85 (0) Mars Attaque,,Québec
-127,0,Diskobol,48 (0) Mars Attaque,,Québec
-128,0,Wolfpack,16 (0) Fun E nuF,,St-John
-129,0,Nussan Family,73 (0) Mars Attaque,,Québec
-130,0,Weedeaters,39 (0) Mars Attaque,,Québec
-131,0,Nordiques,95 (0) Mars Attaque,,Québec
-132,0,Maritime Mercs,88 (0) Mars Attaque,,all over
-133,0,Rocco,54 (0) Mars Attaque,,Québec
-134,0,OrdéHum,29 (0) Mars Attaque,,Québec
-135,0,UNB,13 (0) Fun E nuF,,Fredericton
-136,0,Pick-up AJJUQ,89 (0) Mars Attaque,,Partout
-137,0,Mean Machine,86 (0) Mars Attaque,,Québec
-138,0,Power Geekers,101 (0) Mars Attaque,,Québec
-139,0,Colle à dentier,82 (0) Mars Attaque,,Québec
-140,0,Ninja Subs,22 (0) Mars Attaque,,Québec
-141,0,Anarchy,14 (0) Fun E nuF,,St-John
-142,0,Greengos,72 (0) Mars Attaque,,Québec
-143,0,Promus,98 (0) Mars Attaque,,Québec
-144,0,Myrmidons,66 (0) Mars Attaque,,"Trois-Rivières,Alma"
-145,0,SoSi Team,77 (0) Mars Attaque,,Québec
-146,0,Bleu Marin,11 (0) Fun E nuF,71 (0) Mars Attaque,Gaspé
-147,0,Light Weight Team,68 (0) Mars Attaque,,Québec
-148,0,Tortues rapides,15 (0) Fun E nuF,80 (0) Mars Attaque,"Moncton,Fredericton,Edmundston"
-149,0,Jeundz,31 (0) Mars Attaque,,Quebec
-150,0,Patriotes,102 (0) Mars Attaque,,"Sherbrooke,Québec"
-151,0,Hammocks,76 (0) Mars Attaque,,Québec
-152,0,Machines Gump,87 (0) Mars Attaque,,Québec
-153,0,Jersey Scores,79 (0) Mars Attaque,,Québec
-154,0,Mitaines,62 (0) Mars Attaque,,Québec
+1,1936,Trillium Carnage,1 (1000) Coup de Foudre,2 (936) Bye Bye,
+2,1881,Louis Luncheonette,1 (1000) Bye Bye,3 (881) Movember,
+3,1881,Outs,1 (1000) Movember,3 (881) Bye Bye,
+4,1817,NinjaX,2 (986) Movember,4 (831) Coup de Foudre,
+5,1722,Turbo Fluo,2 (936) Coup de Foudre,5 (786) Bye Bye,
+6,1587,Vallée des Licornes,3 (881) Coup de Foudre,7 (706) Movember,
+7,1576,Sugar Mommies,4 (831) Movember,6 (745) Bye Bye,
+8,1572,Rebellion,5 (786) Movember,5 (786) Coup de Foudre,
+9,1500,Squeezy Lemon,4 (831) Bye Bye,8 (669) Movember,
+10,1341,UltiBattleDisc l'équipe d'Ultimate Récréatif ,7 (706) Bye Bye,9 (635) Movember,
+11,1278,KGB,7 (706) Coup de Foudre,11 (572) Bye Bye,
+12,1272,Qg,8 (669) Bye Bye,10 (603) Coup de Foudre,
+13,1066,Chainsaw,10 (603) Movember,15 (463) Bye Bye,
+14,1066,9h50,10 (603) Bye Bye,15 (463) Movember,
+15,1058,Douze Singes,12 (543) Movember,13 (515) Coup de Foudre,
+16,1016,Quality Control,11 (572) Movember,2 (444) Bonne annee,
+17,1000,Joyeux compagnons,1 (500) La Flotte,1 (500) Oktober Disk,
+18,945,Light Weight,11 (572) Coup de Foudre,19 (373) Bye Bye,
+19,937,Piggy Pogo Hippo,12 (543) Bye Bye,18 (394) Coup de Foudre,
+20,928,Disklock,14 (489) Coup de Foudre,16 (439) Movember,
+21,916,Marianne,12 (543) Coup de Foudre,19 (373) Movember,
+22,855,Grosses,16 (439) Coup de Foudre,17 (416) Movember,
+23,832,James Street Bulldogs,17 (416) Coup de Foudre,17 (416) Bye Bye,
+24,778,L'équipe Pick-Up,2 (444) La Flotte,21 (334) Coup de Foudre,
+25,707,Commando,19 (373) Coup de Foudre,21 (334) Movember,
+26,673,Connect4,4 (358) Oktober Disk,22 (315) Bye Bye,
+27,658,Squall,4 (358) La Flotte,1 (300) CEQU4 Carleton,
+28,658,Plan B,18 (394) Movember,25 (264) Bye Bye,
+29,649,Evolve,21 (334) Bye Bye,22 (315) Coup de Foudre,
+30,612,Chiefs,22 (315) Movember,23 (297) Coup de Foudre,
+31,602,Carl Carmoni,5 (322) Oktober Disk,24 (280) Coup de Foudre,
+32,581,Quarks,23 (297) Movember,27 (284) Coup de Foudre,
+33,561,VTM,23 (297) Bye Bye,25 (264) Coup de Foudre,
+34,461,Bleu Marin,1 (250) CEQU4 Gaspe,9 (211) La Flotte,
+35,441,Glenncellents,7 (261) La Flotte,31 (180) Movember,
+36,436,hamer time,24 (280) Movember,33 (156) Bye Bye,
+37,435,4-Da-Win,1 (250) Victo Bowl,35 (185) Coup de Foudre,
+38,427,Arm & Hammer,8 (235) Oktober Disk,30 (192) Coup de Foudre,
+39,402,Subasko,2 (201) CEQU4 Carleton,2 (201) CEQU4 Gaspe,
+40,398,Zizanie,3 (398) Oktober Disk,,
+41,398,Brûlés,3 (398) La Flotte,,
+42,388,Hurakan,28 (219) Bye Bye,11 (169) Oktober Disk,
+43,384,Bolt,30 (192) Movember,30 (192) Bye Bye,
+44,381,Vieux jeux,2 (201) Victo Bowl,31 (180) Bye Bye,
+45,379,Weedeaters,9 (211) Oktober Disk,32 (168) Bye Bye,
+46,358,Quick and Dirty,4 (358) Bonne annee,,
+47,342,Sasquatch!,8 (235) La Flotte,5 (107) La Viree,
+48,340,Hermaphrodisques,6 (340) La Flotte,,
+49,334,Jackalopes,10 (189) La Flotte,34 (145) Coup de Foudre,
+50,323,Gusto,27 (234) Movember,40 (89) Coup de Foudre,
+51,322,Force toilette,5 (322) La Flotte,49 (0) Mars Attaque,
+52,322,ECU 23,5 (322) Bonne annee,,
+53,315,Bazooka,31 (180) Coup de Foudre,35 (135) Bye Bye,
+54,300,The Astronauts,32 (218) Coup de Foudre,41 (82) Movember,
+55,290,TC 23,6 (290) Bonne annee,,
+56,287,Pisse-Minute,29 (205) Coup de Foudre,41 (82) Bye Bye,
+57,268,Nordiscs,6 (135) La Viree,13 (133) La Flotte,
+58,261,Sharknado,7 (261) Oktober Disk,,
+59,253,Pirhanas,33 (156) Coup de Foudre,39 (97) Movember,
+60,250,Hot Wheels,1 (250) La Viree,,
+61,250,Dion chante noël,1 (250) Attache t'ajjuq,,
+62,235,G'S Pot,8 (235) Bonne annee,,
+63,227,Farfadets,11 (169) La Flotte,57 (58) Movember,
+64,219,Mockingbirds,28 (219) Movember,,
+65,218,Battleship,37 (115) Coup de Foudre,15 (103) Oktober Disk,
+66,214,Cougars,5 (107) CEQU4 Carleton,5 (107) CEQU4 Gaspe,
+67,208,Dynamite,32 (168) Movember,21 (40) Bonne annee,
+68,206,Patriotes,14 (117) Oktober Disk,40 (89) Movember,
+69,201,Votre équipe du CA,2 (201) Attache t'ajjuq,,
+70,201,Ale-Mah,2 (201) La Viree,,
+71,196,Frisbeenomiale,38 (106) Bye Bye,16 (90) Oktober Disk,
+72,192,Martine joue au frisbee,36 (125) Movember,18 (67) Oktober Disk,
+73,189,Max Power,10 (189) Bonne annee,,
+74,169,Tribe,11 (169) Bonne annee,,
+75,169,Lebœuf Saloon,37 (115) Bye Bye,45 (54) Coup de Foudre,
+76,163,Morues,3 (163) CEQU4 Gaspe,,
+77,163,Bars Rayés,3 (163) CEQU4 Carleton,,
+78,163,Grues d'Acajou,3 (163) La Viree,,
+79,150,Boyz,12 (150) La Flotte,,
+80,149,Sony Discmans,41 (82) Coup de Foudre,43 (67) Bye Bye,
+81,144,Moldus,4 (132) Victo Bowl,55 (12) Coup de Foudre,
+82,135,BAZOOKA,35 (135) Movember,41 (0) Mars Attaque,
+83,132,Rogers perchés,4 (132) CEQU4 Gaspe,,
+84,132,Bleu Marine,4 (132) CEQU4 Carleton,,
+85,132,Frisbeenator,4 (132) Attache t'ajjuq,,
+86,132,Sasquatch! Hunters,4 (132) La Viree,,
+87,118,LumberJacks,44 (61) Movember,19 (57) Bonne annee,
+88,117,White noise,14 (117) La Flotte,115 (0) Mars Attaque,
+89,107,Touskis,5 (107) Victo Bowl,,
+90,107,Team Smashbros,5 (107) Attache t'ajjuq,59 (0) Mars Attaque,
+91,103,Moving Castle,15 (103) Bonne annee,,
+92,96,Tire-bouchon,27 (58) Oktober Disk,9 (38) Victo Bowl,
+93,93,Mohicans,37 (50) Bonne annee,47 (43) Bye Bye,
+94,91,P'tits poulets,6 (85) Victo Bowl,28 (6) Oktober Disk,
+95,90,Apocalypse,13 (57) Victo Bowl,49 (33) Coup de Foudre,
+96,90,Benny and the Jets,16 (90) Bonne annee,,
+97,87,Thunderstruck,45 (54) Bye Bye,22 (33) Oktober Disk,
+98,85,Némo,6 (85) CEQU4 Carleton,,
+99,85,Bye avec Souper,6 (85) Attache t'ajjuq,,
+100,78,J'passe partout,17 (78) Oktober Disk,,
+101,78,Squeezlock,17 (78) Bonne annee,,
+102,76,Swaggerwalk,47 (43) Coup de Foudre,49 (33) Bye Bye,
+103,73,Tourista,44 (61) Coup de Foudre,55 (12) Movember,
+104,70,Bons jacks,7 (66) Victo Bowl,29 (4) Oktober Disk,
+105,66,Satyres,7 (66) La Viree,80 (0) Mars Attaque,
+106,66,Nain de noël,7 (66) Attache t'ajjuq,,
+107,65,Qrinqué,46 (49) Coup de Foudre,25 (16) Oktober Disk,
+108,59,Bangarang,46 (49) Bye Bye,56 (10) Coup de Foudre,
+109,57,Révolution de l'empire de la roche royale,19 (57) Oktober Disk,,
+110,57,Nordisques,48 (38) Coup de Foudre,11 (19) Victo Bowl,
+111,53,Quidam,48 (38) Movember,54 (15) Coup de Foudre,
+112,51,Machines,8 (51) Attache t'ajjuq,,
+113,51,Éponges,8 (51) La Viree,,
+114,51,Capitaines,8 (51) Victo Bowl,83 (0) Mars Attaque,
+115,50,DiskTrackFUL,50 (29) Bye Bye,52 (21) Coup de Foudre,
+116,38,On arrivait pas a s'entendre,9 (38) Attache t'ajjuq,,
+117,28,El Gros Club,10 (27) Victo Bowl,63 (1) Movember,
+118,27,Poussins pas de tête,10 (27) Attache t'ajjuq,,
+119,25,Thunder,51 (25) Coup de Foudre,19 (0) Victo Bowl,
+120,19,Équipe Épique,11 (19) Attache t'ajjuq,102 (0) Mars Attaque,
+121,16,Adios Pantalones,25 (16) Bonne annee,,
+122,14,Oeufs poachés,12 (12) Victo Bowl,61 (2) Movember,
+123,12,Disc-men,12 (12) Attache t'ajjuq,,
+124,8,Young guns,27 (8) Bonne annee,35 (0) Mars Attaque,
+125,7,Zebra zone,13 (7) Attache t'ajjuq,105 (0) Mars Attaque,
+126,6,Sangria Ultimate Club,58 (6) Movember,36 (0) Bonne annee,
+127,4,Pick up Laurentides,14 (4) Victo Bowl,,
+128,2,Ma mère va être contente que je descende,15 (2) Victo Bowl,,
+129,2,Kamikaze,62 (2) Movember,,
+130,1,Coquins,64 (1) Movember,,
+131,1,Club École,16 (1) Victo Bowl,,
+132,0,Spineux,109 (0) Mars Attaque,,
+133,0,Weedeaters - Qc,37 (0) Mars Attaque,,
+134,0,Rue Cockburn,18 (0) Victo Bowl,,
+135,0,Mr Freeze,96 (0) Mars Attaque,,
+136,0,Pirates,110 (0) Mars Attaque,,
+137,0,Disquetaires,116 (0) Mars Attaque,,
+138,0,Maigres en soute,64 (0) Mars Attaque,,
+139,0,Club des Musclés,40 (0) Bonne annee,,
+140,0,Fraises Poilues,99 (0) Mars Attaque,,
+141,0,Disctruction,66 (0) Mars Attaque,,
+142,0,Morgan Freemans,100 (0) Mars Attaque,,
+143,0,Lumineurs,46 (0) Bonne annee,,
+144,0,Liens,36 (0) Oktober Disk,,
+145,0,Floppy Disc,104 (0) Mars Attaque,,
+146,0,Marmottes Volantes,62 (0) Mars Attaque,,
+147,0,Mongoose,92 (0) Mars Attaque,,
+148,0,Honey Badger,50 (0) Mars Attaque,,
+149,0,Teddy bears,54 (0) Mars Attaque,,
+150,0,St-Charles,112 (0) Mars Attaque,20 (0) Victo Bowl,
+151,0,Bang-A-Rang,85 (0) Mars Attaque,,
+152,0,Frégates,84 (0) Mars Attaque,,
+153,0,Scoober Divers,88 (0) Mars Attaque,,
+154,0,LSD,45 (0) Bonne annee,,
+155,0,Leftovers,48 (0) Bonne annee,,
+156,0,Frisbee Crushers,76 (0) Mars Attaque,,
+157,0,R-D-Hell,95 (0) Mars Attaque,,
+158,0,Left Shark,93 (0) Mars Attaque,,
+159,0,Petits bonnets,90 (0) Mars Attaque,,
+160,0,Octopus,35 (0) Oktober Disk,,
+161,0,NinJardin,70 (0) Mars Attaque,,
+162,0,Jaws,40 (0) Oktober Disk,,
+163,0,J'aime ton corps,113 (0) Mars Attaque,,
+164,0,Goats,86 (0) Mars Attaque,,
+165,0,Mirego,71 (0) Mars Attaque,,
+166,0,Violet Volvox,111 (0) Mars Attaque,,
+167,0,New Disk on the Block,107 (0) Mars Attaque,,
+168,0,Johnny rutabagas,69 (0) Mars Attaque,,
+169,0,Juridisques,22 (0) Victo Bowl,,
+170,0,Double Zebra,74 (0) Mars Attaque,,
+171,0,Mean Machine,97 (0) Mars Attaque,,
+172,0,Spider pigs,21 (0) Victo Bowl,,
+173,0,Just catch it,81 (0) Mars Attaque,,
+174,0,Rockstar,79 (0) Mars Attaque,,
+175,0,Flickatibis,47 (0) Bonne annee,,
+176,0,Hammock,65 (0) Mars Attaque,,
+177,0,Alain Térieur,94 (0) Mars Attaque,,
+178,0,Laurie-Ann,98 (0) Mars Attaque,,
+179,0,Fous du Nord,108 (0) Mars Attaque,,
+180,0,Cobra Kai,34 (0) Mars Attaque,,
+181,0,Discobols,40 (0) Mars Attaque,,
+182,0,Benchwarmers,114 (0) Mars Attaque,38 (0) Oktober Disk,
+183,0,Disco pimp,87 (0) Mars Attaque,,
+184,0,Bisons,77 (0) Mars Attaque,,
+185,0,Free Runners,89 (0) Mars Attaque,,
+186,0,Funners Gonna Fun,36 (0) Mars Attaque,,
+187,0,Jolies,46 (0) Mars Attaque,,
+188,0,Cold Fx,63 (0) Mars Attaque,,
+189,0,Disc Catchers,106 (0) Mars Attaque,,

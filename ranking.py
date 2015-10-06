@@ -317,7 +317,7 @@ class Classement(object):
         rows.append(('Total', tot))
         return table(rows=rows, header_row=True)
 
-    def strength5(self, tournoi, best=5):
+    def _strength5(self, tournoi, best=5):
         r"""
         The best 5 teams of a tournaments finished in the top what overall?
         """
@@ -328,14 +328,14 @@ class Classement(object):
                 s += 1
             if s == best:
                 return i+1
-    def strength20(self, tournoi, top=20):
+    def _strength20(self, tournoi, top=20):
         r"""
         How many of top 20 went to the tournament?
         """
         L = sorted(self._equipes.values(), reverse=True)
         return sum((1 for e in L[:top] if tournoi in e._positions))
 
-    def tournament_size(self, tournoi):
+    def _tournament_size(self, tournoi):
         L = self._equipes.values()
         return sum((1 for e in L if tournoi in e._positions))
     def tournaments_stat_table(self):
@@ -344,8 +344,8 @@ class Classement(object):
         for T in self._tournois:
             scale = self._scales[T._scale_id]
             rows.append( (T.long_name(), scale[1], len(scale)-1, 
-                          self.tournament_size(T), 
-                          "5/%s and %s/20"%(self.strength5(T), self.strength20(T))))
+                          self._tournament_size(T), 
+                          "5/%s and %s/20"%(self._strength5(T), self._strength20(T))))
         return table(rows=rows,header_row=True)
 
 
@@ -410,24 +410,6 @@ class Classement(object):
             rows.append(row)
         return table(rows=rows,header_row=True)
 
-################################
-# Nombre de caracteres accentues
-################################
-def nombre_car_accentues(string):
-    r"""
-    EXEMPLES::
-
-        sage: nombre_car_accentues("Montreal")
-        0
-        sage: nombre_car_accentues("Mont,re,a,l")
-        0
-    """
-    i = 0
-    for a in string:
-        if not a.isalnum() and not a.isspace() and not a in "-/!?'+,*":
-            i += 1
-    #assert i % 2 == 0, "nombre pair daccents (%s)" % string
-    return i# / 2
 
 ################################
 # Script
